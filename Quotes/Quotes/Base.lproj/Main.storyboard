@@ -1,24 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O8G-gU-1Kv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" id="BYZ-38-t0r" customClass="CameraViewController" customModule="Quotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pOl-7X-Gge">
+                                <rect key="frame" x="0.0" y="88" width="414" height="552"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="pOl-7X-Gge" secondAttribute="width" multiplier="4:3" id="3BY-MQ-WuU"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plu-8L-GMV">
+                                <rect key="frame" x="0.0" y="596" width="414" height="300"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mxT-Uk-0jA">
+                                        <rect key="frame" x="0.0" y="22" width="414" height="278"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. orem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. orem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. orem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpS-Gx-Y19">
+                                        <rect key="frame" x="182" y="6.5" width="50" height="16.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="2L9-PO-mhv"/>
+                                            <constraint firstAttribute="height" constant="30" id="Ijh-ev-BPT"/>
+                                        </constraints>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" backgroundImage="chevron.compact.up" catalog="system">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="mxT-Uk-0jA" firstAttribute="top" secondItem="plu-8L-GMV" secondAttribute="top" constant="22" id="9Uh-ZP-2fB"/>
+                                    <constraint firstItem="XpS-Gx-Y19" firstAttribute="top" secondItem="plu-8L-GMV" secondAttribute="top" id="LSf-uZ-mFu"/>
+                                    <constraint firstItem="mxT-Uk-0jA" firstAttribute="leading" secondItem="plu-8L-GMV" secondAttribute="leading" id="cXV-zL-Kgk"/>
+                                    <constraint firstAttribute="bottom" secondItem="mxT-Uk-0jA" secondAttribute="bottom" id="kwr-l5-ev8"/>
+                                    <constraint firstAttribute="height" constant="300" id="mZA-zK-lLo"/>
+                                    <constraint firstItem="XpS-Gx-Y19" firstAttribute="centerX" secondItem="plu-8L-GMV" secondAttribute="centerX" id="y46-2f-3jq"/>
+                                    <constraint firstAttribute="trailing" secondItem="mxT-Uk-0jA" secondAttribute="trailing" id="zPE-YL-vLH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pOl-7X-Gge" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0Qo-ah-MNK"/>
+                            <constraint firstItem="plu-8L-GMV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G7W-vw-d9o"/>
+                            <constraint firstAttribute="bottom" secondItem="plu-8L-GMV" secondAttribute="bottom" id="LO9-jU-yYJ"/>
+                            <constraint firstItem="pOl-7X-Gge" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PeH-6j-v0I"/>
+                            <constraint firstItem="pOl-7X-Gge" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ltB-W1-LDn"/>
+                            <constraint firstItem="plu-8L-GMV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nrf-Ba-h2N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hwl-dd-veg">
+                        <barButtonItem key="leftBarButtonItem" title="Photos" id="VpB-xE-xQT">
+                            <connections>
+                                <action selector="photosButtonTapped:" destination="BYZ-38-t0r" id="16i-ie-6vI"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Scan" id="XqV-vK-wXR">
+                                <connections>
+                                    <action selector="scanButtonTapped:" destination="BYZ-38-t0r" id="ZZw-1h-gke"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Camera" id="dIM-QP-ub6">
+                                <connections>
+                                    <action selector="CameraButtonTapped:" destination="BYZ-38-t0r" id="067-Tk-BSB"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="pOl-7X-Gge" id="a9V-x8-7OZ"/>
+                        <outlet property="resultView" destination="plu-8L-GMV" id="V1Y-jq-ppz"/>
+                        <outlet property="resultViewHeight" destination="mZA-zK-lLo" id="iCE-SA-jgg"/>
+                        <outlet property="strechResultViewButton" destination="XpS-Gx-Y19" id="FFF-uT-XAm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ipg-fe-fVi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O8G-gU-1Kv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i2h-9P-dnP">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="e0k-P7-SjA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVm-P2-ujt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.compact.up" catalog="system" width="64" height="20"/>
+    </resources>
 </document>
