@@ -19,7 +19,6 @@ class CameraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addSwipeGesture(view: strechResultViewButton)
         
         if difference < 200 {
@@ -42,15 +41,21 @@ class CameraViewController: UIViewController {
         resultView.layoutIfNeeded()
         switch sender.state {
         case .began:
-            
-            resultViewHeight.constant = view.frame.maxY - sender.location(in: view).y
+            print()
         case .changed:
-            print()
-            resultViewHeight.constant = view.frame.maxY - sender.location(in: view).y
+            if view.frame.maxY - sender.location(in: view).y > difference {
+                resultViewHeight.constant = view.frame.maxY - sender.location(in: view).y
+            }
+            
+            strechResultViewButton.setImage(UIImage(systemName: "minus"), for: .normal)
         case .ended:
-            print()
+            
+            if resultViewHeight.constant < view.frame.maxY - imageView.frame.maxY + 30 {
+                strechResultViewButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+            } else {
+                strechResultViewButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+            }
         default:
-            print(sender.state.rawValue)
             print()
         }
     }
@@ -58,8 +63,35 @@ class CameraViewController: UIViewController {
     
     
     @IBAction func strechViewButonSlide(_ sender: UIButton) {
-        //        resultViewHeight.constant = 600
-        //        resultView.layoutIfNeeded()
+        
+        if resultViewHeight.constant < view.frame.maxY - imageView.frame.maxY + 30 {
+            
+            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 2, options: .curveEaseOut, animations: {
+                self.strechResultViewButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+                self.resultViewHeight.constant = self.view.frame.maxY - 150
+                
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+            
+        } else {
+            if difference < 200 {
+                UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 2, options: .curveEaseOut, animations: {
+                    self.strechResultViewButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+                    self.resultViewHeight.constant = 200
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+            } else {
+                UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 2, options: .curveEaseOut, animations: {
+                    self.strechResultViewButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+                    self.resultViewHeight.constant = self.view.frame.maxY - self.imageView.frame.maxY
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+            }
+            
+        }
+        
+        
+        
     }
     
     
@@ -95,7 +127,6 @@ extension CameraViewController: UINavigationControllerDelegate, UIImagePickerCon
         let controller = UIImagePickerController()
         controller.delegate = self
         controller.sourceType = sourceType
-        //       controller.mediaTypes = [String(kUTTypeImage), String(kUTTypeMovie)]
         present(controller, animated: true, completion: nil)
     }
     
@@ -106,9 +137,7 @@ extension CameraViewController: UINavigationControllerDelegate, UIImagePickerCon
             info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             
             imageView.contentMode = .scaleAspectFit
-            //         let fixedImage = pickedImage.fixOrientation()
             imageView.image = pickedImage
-            //         drawFeatures(in: imageView, words: true)
         }
         dismiss(animated: true, completion: nil)
     }
