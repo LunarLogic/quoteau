@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>304133531540-c608uvukffclolgerl6iekcalcr9t3f7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.304133531540-c608uvukffclolgerl6iekcalcr9t3f7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC9BHvqKjBe37XAE35X69o1JI7gUWyQ2Bw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>304133531540</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.lunarlogic.Quotes</string>
+	<key>PROJECT_ID</key>
+	<string>quotes-8079f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quotes-8079f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:304133531540:ios:e7c7e30fb1891396b6d181</string>
+	<key>DATABASE_URL</key>
+	<string>https://quotes-8079f.firebaseio.com</string>
+</dict>
+</plist>
