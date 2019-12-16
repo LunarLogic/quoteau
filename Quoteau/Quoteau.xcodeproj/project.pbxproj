@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C6EB5613238BE6A300471ACC /* Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6EB5613238BE6A300471ACC /* Quoteau.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quoteau.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EB5616238BE6A300471ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6EB5618238BE6A300471ACC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C6EB561A238BE6A300471ACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		C6EB5614238BE6A300471ACC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C6EB5613238BE6A300471ACC /* Quotes.app */,
+				C6EB5613238BE6A300471ACC /* Quoteau.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,15 +64,16 @@
 				C6EB5621238BE6A600471ACC /* LaunchScreen.storyboard */,
 				C6EB5624238BE6A600471ACC /* Info.plist */,
 			);
-			path = Quotes;
+			name = Quotes;
+			path = Quoteau;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C6EB5612238BE6A300471ACC /* Quotes */ = {
+		C6EB5612238BE6A300471ACC /* Quoteau */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6EB5627238BE6A600471ACC /* Build configuration list for PBXNativeTarget "Quotes" */;
+			buildConfigurationList = C6EB5627238BE6A600471ACC /* Build configuration list for PBXNativeTarget "Quoteau" */;
 			buildPhases = (
 				C6EB560F238BE6A300471ACC /* Sources */,
 				C6EB5610238BE6A300471ACC /* Frameworks */,
@@ -82,9 +83,9 @@
 			);
 			dependencies = (
 			);
-			name = Quotes;
+			name = Quoteau;
 			productName = Quotes;
-			productReference = C6EB5613238BE6A300471ACC /* Quotes.app */;
+			productReference = C6EB5613238BE6A300471ACC /* Quoteau.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +103,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C6EB560E238BE6A300471ACC /* Build configuration list for PBXProject "Quotes" */;
+			buildConfigurationList = C6EB560E238BE6A300471ACC /* Build configuration list for PBXProject "Quoteau" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +116,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C6EB5612238BE6A300471ACC /* Quotes */,
+				C6EB5612238BE6A300471ACC /* Quoteau */,
 			);
 		};
 /* End PBXProject section */
@@ -286,12 +287,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P5RDH747R8;
-				INFOPLIST_FILE = Quotes/Info.plist;
+				INFOPLIST_FILE = Quoteau/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.lunarlogic.Quotes;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lunarlogic.Quoteau;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -304,12 +305,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P5RDH747R8;
-				INFOPLIST_FILE = Quotes/Info.plist;
+				INFOPLIST_FILE = Quoteau/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.lunarlogic.Quotes;
+				PRODUCT_BUNDLE_IDENTIFIER = io.lunarlogic.Quoteau;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,7 +320,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C6EB560E238BE6A300471ACC /* Build configuration list for PBXProject "Quotes" */ = {
+		C6EB560E238BE6A300471ACC /* Build configuration list for PBXProject "Quoteau" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6EB5625238BE6A600471ACC /* Debug */,
@@ -328,7 +329,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6EB5627238BE6A600471ACC /* Build configuration list for PBXNativeTarget "Quotes" */ = {
+		C6EB5627238BE6A600471ACC /* Build configuration list for PBXNativeTarget "Quoteau" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6EB5628238BE6A600471ACC /* Debug */,
