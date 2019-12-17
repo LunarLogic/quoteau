@@ -106,11 +106,8 @@
 				C6EB5610238BE6A300471ACC /* Frameworks */,
 				C6EB5611238BE6A300471ACC /* Resources */,
 				90E16994131A5C9313EF3474 /* [CP] Embed Pods Frameworks */,
-<<<<<<< HEAD
 				40FDEA4323A8EE3100D5F143 /* ShellScript */,
-=======
 				3496069E9311FCF1C7C21068 /* [CP] Copy Pods Resources */,
->>>>>>> Firebase setup
 			);
 			buildRules = (
 			);
@@ -168,17 +165,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-<<<<<<< HEAD
 		40FDEA4323A8EE3100D5F143 /* ShellScript */ = {
-=======
-		3496069E9311FCF1C7C21068 /* [CP] Copy Pods Resources */ = {
->>>>>>> Firebase setup
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-<<<<<<< HEAD
 			);
 			inputPaths = (
 			);
@@ -189,7 +181,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-=======
+   };
+    3496069E9311FCF1C7C21068 /* [CP] Copy Pods Resources */ = {
+            isa = PBXShellScriptBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -200,7 +198,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources.sh\"\n";
 			showEnvVarsInLog = 0;
->>>>>>> Firebase setup
 		};
 		8A4C8AD640BA99574BB15ADD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
