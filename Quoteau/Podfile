@@ -8,5 +8,5 @@ target 'Quoteau' do
   # Pods for Quoteau
 
   pod 'SnapKit', '~> 5.0'
-
+  pod 'SwiftLint'
 end

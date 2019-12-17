@@ -1,0 +1,8 @@
+opt_in_rules:
+  - control_statement
+  - empty_count
+  - trailing_newline
+  - colon
+  - comma
+excluded:
+  - Pods
