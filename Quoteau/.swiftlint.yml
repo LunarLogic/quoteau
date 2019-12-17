@@ -4,5 +4,14 @@ opt_in_rules:
   - trailing_newline
   - colon
   - comma
+  - convenience_type
+  - empty_string
+  - fatal_error_message
+  - file_name
+  - first_where
+  - modifier_order
+  - prohibited_interface_builder
+  - toggle_bool
+  - unused_private_declaration
 excluded:
   - Pods
