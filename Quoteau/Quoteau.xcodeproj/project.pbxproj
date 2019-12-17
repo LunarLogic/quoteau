@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A84DCCC31C3CA2D3814F0B7 /* Pods_Quoteau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4CCD66DF892D58BAACB822 /* Pods_Quoteau.framework */; };
+		C610CC5623A8E484007B109C /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C610CC5523A8E484007B109C /* TabBarVC.swift */; };
 		C6EB5617238BE6A300471ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB5616238BE6A300471ACC /* AppDelegate.swift */; };
 		C6EB5619238BE6A300471ACC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB5618238BE6A300471ACC /* SceneDelegate.swift */; };
-		C6EB561B238BE6A300471ACC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB561A238BE6A300471ACC /* ViewController.swift */; };
-		C6EB561E238BE6A300471ACC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6EB561C238BE6A300471ACC /* Main.storyboard */; };
 		C6EB5620238BE6A600471ACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6EB561F238BE6A600471ACC /* Assets.xcassets */; };
 		C6EB5623238BE6A600471ACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6EB5621238BE6A600471ACC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7FD226CBB1E8AFB2E8F128FF /* Pods-Quoteau.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quoteau.release.xcconfig"; path = "Target Support Files/Pods-Quoteau/Pods-Quoteau.release.xcconfig"; sourceTree = "<group>"; };
+		9D1BEAB8BAA267E3481FCA0C /* Pods-Quoteau.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quoteau.debug.xcconfig"; path = "Target Support Files/Pods-Quoteau/Pods-Quoteau.debug.xcconfig"; sourceTree = "<group>"; };
+		C610CC5523A8E484007B109C /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		C6EB5613238BE6A300471ACC /* Quoteau.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quoteau.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EB5616238BE6A300471ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6EB5618238BE6A300471ACC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C6EB561A238BE6A300471ACC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C6EB561D238BE6A300471ACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6EB561F238BE6A600471ACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6EB5622238BE6A600471ACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6EB5624238BE6A600471ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE4CCD66DF892D58BAACB822 /* Pods_Quoteau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quoteau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A84DCCC31C3CA2D3814F0B7 /* Pods_Quoteau.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69F04392851BCE6FEA1A1D3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE4CCD66DF892D58BAACB822 /* Pods_Quoteau.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C6EB560A238BE6A300471ACC = {
 			isa = PBXGroup;
 			children = (
 				C6EB5615238BE6A300471ACC /* Quoteau */,
 				C6EB5614238BE6A300471ACC /* Products */,
+				EABF3E0098E8CFC2273BB6EE /* Pods */,
+				69F04392851BCE6FEA1A1D3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +71,22 @@
 			children = (
 				C6EB5616238BE6A300471ACC /* AppDelegate.swift */,
 				C6EB5618238BE6A300471ACC /* SceneDelegate.swift */,
-				C6EB561A238BE6A300471ACC /* ViewController.swift */,
-				C6EB561C238BE6A300471ACC /* Main.storyboard */,
+				C610CC5523A8E484007B109C /* TabBarVC.swift */,
 				C6EB561F238BE6A600471ACC /* Assets.xcassets */,
 				C6EB5621238BE6A600471ACC /* LaunchScreen.storyboard */,
 				C6EB5624238BE6A600471ACC /* Info.plist */,
 			);
 			path = Quoteau;
+			sourceTree = "<group>";
+		};
+		EABF3E0098E8CFC2273BB6EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D1BEAB8BAA267E3481FCA0C /* Pods-Quoteau.debug.xcconfig */,
+				7FD226CBB1E8AFB2E8F128FF /* Pods-Quoteau.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6EB5627238BE6A600471ACC /* Build configuration list for PBXNativeTarget "Quoteau" */;
 			buildPhases = (
+				8A4C8AD640BA99574BB15ADD /* [CP] Check Pods Manifest.lock */,
 				C6EB560F238BE6A300471ACC /* Sources */,
 				C6EB5610238BE6A300471ACC /* Frameworks */,
 				C6EB5611238BE6A300471ACC /* Resources */,
+				90E16994131A5C9313EF3474 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,19 +151,60 @@
 			files = (
 				C6EB5623238BE6A600471ACC /* LaunchScreen.storyboard in Resources */,
 				C6EB5620238BE6A600471ACC /* Assets.xcassets in Resources */,
-				C6EB561E238BE6A300471ACC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A4C8AD640BA99574BB15ADD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quoteau-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90E16994131A5C9313EF3474 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C6EB560F238BE6A300471ACC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6EB561B238BE6A300471ACC /* ViewController.swift in Sources */,
 				C6EB5617238BE6A300471ACC /* AppDelegate.swift in Sources */,
+				C610CC5623A8E484007B109C /* TabBarVC.swift in Sources */,
 				C6EB5619238BE6A300471ACC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +212,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C6EB561C238BE6A300471ACC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C6EB561D238BE6A300471ACC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C6EB5621238BE6A600471ACC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +339,7 @@
 		};
 		C6EB5628238BE6A600471ACC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D1BEAB8BAA267E3481FCA0C /* Pods-Quoteau.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +361,7 @@
 		};
 		C6EB5629238BE6A600471ACC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FD226CBB1E8AFB2E8F128FF /* Pods-Quoteau.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
