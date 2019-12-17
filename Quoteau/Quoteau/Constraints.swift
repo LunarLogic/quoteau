@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Constraints {
+enum Constraints {
     static let topTabBarIconSpacing: CGFloat = 4
     static let bottomTabBarIconSpacing: CGFloat = -4
 }
