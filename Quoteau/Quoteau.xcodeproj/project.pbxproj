@@ -10,6 +10,7 @@
 		9A84DCCC31C3CA2D3814F0B7 /* Pods_Quoteau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4CCD66DF892D58BAACB822 /* Pods_Quoteau.framework */; };
 		C610CC5623A8E484007B109C /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C610CC5523A8E484007B109C /* TabBarVC.swift */; };
 		C6A1E80D23A8F0DC00E8C938 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E80C23A8F0DC00E8C938 /* Constraints.swift */; };
+		C6A1E80F23A8F95600E8C938 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6A1E80E23A8F95600E8C938 /* GoogleService-Info.plist */; };
 		C6EB5617238BE6A300471ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB5616238BE6A300471ACC /* AppDelegate.swift */; };
 		C6EB5619238BE6A300471ACC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB5618238BE6A300471ACC /* SceneDelegate.swift */; };
 		C6EB5620238BE6A600471ACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6EB561F238BE6A600471ACC /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		9D1BEAB8BAA267E3481FCA0C /* Pods-Quoteau.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quoteau.debug.xcconfig"; path = "Target Support Files/Pods-Quoteau/Pods-Quoteau.debug.xcconfig"; sourceTree = "<group>"; };
 		C610CC5523A8E484007B109C /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		C6A1E80C23A8F0DC00E8C938 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		C6A1E80E23A8F95600E8C938 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C6EB5613238BE6A300471ACC /* Quoteau.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quoteau.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EB5616238BE6A300471ACC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6EB5618238BE6A300471ACC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				C6EB5621238BE6A600471ACC /* LaunchScreen.storyboard */,
 				C6EB5624238BE6A600471ACC /* Info.plist */,
 				C6A1E80C23A8F0DC00E8C938 /* Constraints.swift */,
+				C6A1E80E23A8F95600E8C938 /* GoogleService-Info.plist */,
 			);
 			path = Quoteau;
 			sourceTree = "<group>";
@@ -103,7 +106,11 @@
 				C6EB5610238BE6A300471ACC /* Frameworks */,
 				C6EB5611238BE6A300471ACC /* Resources */,
 				90E16994131A5C9313EF3474 /* [CP] Embed Pods Frameworks */,
+<<<<<<< HEAD
 				40FDEA4323A8EE3100D5F143 /* ShellScript */,
+=======
+				3496069E9311FCF1C7C21068 /* [CP] Copy Pods Resources */,
+>>>>>>> Firebase setup
 			);
 			buildRules = (
 			);
@@ -154,18 +161,24 @@
 			files = (
 				C6EB5623238BE6A600471ACC /* LaunchScreen.storyboard in Resources */,
 				C6EB5620238BE6A600471ACC /* Assets.xcassets in Resources */,
+				C6A1E80F23A8F95600E8C938 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+<<<<<<< HEAD
 		40FDEA4323A8EE3100D5F143 /* ShellScript */ = {
+=======
+		3496069E9311FCF1C7C21068 /* [CP] Copy Pods Resources */ = {
+>>>>>>> Firebase setup
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+<<<<<<< HEAD
 			);
 			inputPaths = (
 			);
@@ -176,6 +189,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+=======
+				"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+>>>>>>> Firebase setup
 		};
 		8A4C8AD640BA99574BB15ADD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
