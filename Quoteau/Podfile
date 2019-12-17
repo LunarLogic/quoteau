@@ -9,4 +9,19 @@ target 'Quoteau' do
 
   pod 'SnapKit', '~> 5.0'
   pod 'SwiftLint'
+
+  # Pod for firebase
+  pod 'Firebase/Core'
+
+  # Pods for text recognition
+  pod 'Firebase/MLVision'
+  pod 'Firebase/MLVisionTextModel'
+
+  # Pods for remote database
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+
+  # Pod for remote storage
+  pod 'Firebase/Storage'
+
 end
