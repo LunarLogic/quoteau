@@ -24,7 +24,7 @@ class TabBarVC: UITabBarController {
         let profileSelectedImage = UIImage(systemName: "person.fill")
         else { return }
         
-        let homeViewController = templateNavController(image: homeImage, selectedImage: homeSelectedImage, rootViewController: HomeCollectionVC(collectionViewLayout: UICollectionViewFlowLayout()))
+        let homeViewController = templateNavController(image: homeImage, selectedImage: homeSelectedImage, rootViewController: UIViewController())
         
         let cameraViewController = templateNavController(image: cameraImage, selectedImage: cameraImage)
         
