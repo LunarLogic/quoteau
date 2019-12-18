@@ -19,11 +19,11 @@ class TabBarVC: UITabBarController {
     fileprivate func setupViewControllers() {
 
         guard let homeImage = UIImage.init(systemName: "house"),
-              let homeSelectedImage = UIImage.init(systemName: "house.fill"),
-              let cameraImage = UIImage.init(systemName: "plus"),
-              let profileImage = UIImage(systemName: "person"),
-              let profileSelectedImage = UIImage(systemName: "person.fill")
-        else { return }
+            let homeSelectedImage = UIImage.init(systemName: "house.fill"),
+            let cameraImage = UIImage.init(systemName: "plus"),
+            let profileImage = UIImage(systemName: "person"),
+            let profileSelectedImage = UIImage(systemName: "person.fill")
+            else { return }
 
         let homeViewController = templateNavController(image: homeImage,
                                                        selectedImage: homeSelectedImage,
@@ -48,10 +48,10 @@ class TabBarVC: UITabBarController {
     fileprivate func templateNavController(image: UIImage,
                                            selectedImage: UIImage,
                                            rootViewController: UIViewController = UIViewController())
-                                            -> UINavigationController {
-        let navController = UINavigationController(rootViewController: rootViewController)
-        navController.tabBarItem.image = image.withRenderingMode(.alwaysOriginal)
-        navController.tabBarItem.selectedImage = selectedImage.withRenderingMode(.alwaysOriginal)
-        return navController
+        -> UINavigationController {
+            let navController = UINavigationController(rootViewController: rootViewController)
+            navController.tabBarItem.image = image.withRenderingMode(.alwaysOriginal)
+            navController.tabBarItem.selectedImage = selectedImage.withRenderingMode(.alwaysOriginal)
+            return navController
     }
 }

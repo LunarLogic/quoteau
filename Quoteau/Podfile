@@ -25,6 +25,9 @@ target 'Quoteau' do
   # Pod for remote storage
   pod 'Firebase/Storage'
 
+  # Pod for local database
+  pod 'RealmSwift'
+
   # Pods for Unit tests
    abstract_target 'Tests' do
     target "QuoteauTests"
