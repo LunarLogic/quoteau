@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8578409D4C98EC4CF8448487 /* Pods_Quoteau_Tests_QuoteauTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33714A4A30D23F828DED01B0 /* Pods_Quoteau_Tests_QuoteauTests.framework */; };
 		9A84DCCC31C3CA2D3814F0B7 /* Pods_Quoteau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4CCD66DF892D58BAACB822 /* Pods_Quoteau.framework */; };
 		C610CC5623A8E484007B109C /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C610CC5523A8E484007B109C /* TabBarVC.swift */; };
+		C6430BD523AA52740093AF5E /* QuoteauTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6430BD423AA52740093AF5E /* QuoteauTests.swift */; };
+		C6430BE323AA5CB10093AF5E /* QuoteauUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6430BE223AA5CB10093AF5E /* QuoteauUITests.swift */; };
 		C6A1E80D23A8F0DC00E8C938 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E80C23A8F0DC00E8C938 /* Constraints.swift */; };
 		C6A1E80F23A8F95600E8C938 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6A1E80E23A8F95600E8C938 /* GoogleService-Info.plist */; };
 		C6EB5617238BE6A300471ACC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB5616238BE6A300471ACC /* AppDelegate.swift */; };
@@ -17,10 +20,36 @@
 		C6EB5623238BE6A600471ACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6EB5621238BE6A600471ACC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C6430BD723AA52740093AF5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6EB560B238BE6A300471ACC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6EB5612238BE6A300471ACC;
+			remoteInfo = Quoteau;
+		};
+		C6430BE523AA5CB10093AF5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6EB560B238BE6A300471ACC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6EB5612238BE6A300471ACC;
+			remoteInfo = Quoteau;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		33714A4A30D23F828DED01B0 /* Pods_Quoteau_Tests_QuoteauTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quoteau_Tests_QuoteauTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F32C11E9F3F258D3E81DD78 /* Pods-Quoteau-Tests-QuoteauTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quoteau-Tests-QuoteauTests.debug.xcconfig"; path = "Target Support Files/Pods-Quoteau-Tests-QuoteauTests/Pods-Quoteau-Tests-QuoteauTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FD226CBB1E8AFB2E8F128FF /* Pods-Quoteau.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quoteau.release.xcconfig"; path = "Target Support Files/Pods-Quoteau/Pods-Quoteau.release.xcconfig"; sourceTree = "<group>"; };
+		8AB8377FE58E851BE0664B24 /* Pods-Quoteau-Tests-QuoteauTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quoteau-Tests-QuoteauTests.release.xcconfig"; path = "Target Support Files/Pods-Quoteau-Tests-QuoteauTests/Pods-Quoteau-Tests-QuoteauTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D1BEAB8BAA267E3481FCA0C /* Pods-Quoteau.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quoteau.debug.xcconfig"; path = "Target Support Files/Pods-Quoteau/Pods-Quoteau.debug.xcconfig"; sourceTree = "<group>"; };
 		C610CC5523A8E484007B109C /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		C6430BD223AA52740093AF5E /* QuoteauTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuoteauTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6430BD423AA52740093AF5E /* QuoteauTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteauTests.swift; sourceTree = "<group>"; };
+		C6430BD623AA52740093AF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6430BE023AA5CB10093AF5E /* QuoteauUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuoteauUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6430BE223AA5CB10093AF5E /* QuoteauUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteauUITests.swift; sourceTree = "<group>"; };
+		C6430BE423AA5CB10093AF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6A1E80C23A8F0DC00E8C938 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		C6A1E80E23A8F95600E8C938 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C6EB5613238BE6A300471ACC /* Quoteau.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quoteau.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +62,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C6430BCF23AA52740093AF5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8578409D4C98EC4CF8448487 /* Pods_Quoteau_Tests_QuoteauTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6430BDD23AA5CB10093AF5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6EB5610238BE6A300471ACC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,14 +92,35 @@
 			isa = PBXGroup;
 			children = (
 				CE4CCD66DF892D58BAACB822 /* Pods_Quoteau.framework */,
+				33714A4A30D23F828DED01B0 /* Pods_Quoteau_Tests_QuoteauTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6430BD323AA52740093AF5E /* QuoteauTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6430BD423AA52740093AF5E /* QuoteauTests.swift */,
+				C6430BD623AA52740093AF5E /* Info.plist */,
+			);
+			path = QuoteauTests;
+			sourceTree = "<group>";
+		};
+		C6430BE123AA5CB10093AF5E /* QuoteauUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C6430BE223AA5CB10093AF5E /* QuoteauUITests.swift */,
+				C6430BE423AA5CB10093AF5E /* Info.plist */,
+			);
+			path = QuoteauUITests;
 			sourceTree = "<group>";
 		};
 		C6EB560A238BE6A300471ACC = {
 			isa = PBXGroup;
 			children = (
 				C6EB5615238BE6A300471ACC /* Quoteau */,
+				C6430BD323AA52740093AF5E /* QuoteauTests */,
+				C6430BE123AA5CB10093AF5E /* QuoteauUITests */,
 				C6EB5614238BE6A300471ACC /* Products */,
 				EABF3E0098E8CFC2273BB6EE /* Pods */,
 				69F04392851BCE6FEA1A1D3A /* Frameworks */,
@@ -66,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				C6EB5613238BE6A300471ACC /* Quoteau.app */,
+				C6430BD223AA52740093AF5E /* QuoteauTests.xctest */,
+				C6430BE023AA5CB10093AF5E /* QuoteauUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +157,8 @@
 			children = (
 				9D1BEAB8BAA267E3481FCA0C /* Pods-Quoteau.debug.xcconfig */,
 				7FD226CBB1E8AFB2E8F128FF /* Pods-Quoteau.release.xcconfig */,
+				7F32C11E9F3F258D3E81DD78 /* Pods-Quoteau-Tests-QuoteauTests.debug.xcconfig */,
+				8AB8377FE58E851BE0664B24 /* Pods-Quoteau-Tests-QuoteauTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -97,6 +166,45 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C6430BD123AA52740093AF5E /* QuoteauTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6430BDB23AA52740093AF5E /* Build configuration list for PBXNativeTarget "QuoteauTests" */;
+			buildPhases = (
+				EF33D99D88250C3A366CA927 /* [CP] Check Pods Manifest.lock */,
+				C6430BCE23AA52740093AF5E /* Sources */,
+				C6430BCF23AA52740093AF5E /* Frameworks */,
+				C6430BD023AA52740093AF5E /* Resources */,
+				C9942A54EBECC448E8518BBD /* [CP] Embed Pods Frameworks */,
+				2F9AB9E9639F020A137271BD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6430BD823AA52740093AF5E /* PBXTargetDependency */,
+			);
+			name = QuoteauTests;
+			productName = QuoteauTests;
+			productReference = C6430BD223AA52740093AF5E /* QuoteauTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C6430BDF23AA5CB10093AF5E /* QuoteauUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6430BE723AA5CB10093AF5E /* Build configuration list for PBXNativeTarget "QuoteauUITests" */;
+			buildPhases = (
+				C6430BDC23AA5CB10093AF5E /* Sources */,
+				C6430BDD23AA5CB10093AF5E /* Frameworks */,
+				C6430BDE23AA5CB10093AF5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6430BE623AA5CB10093AF5E /* PBXTargetDependency */,
+			);
+			name = QuoteauUITests;
+			productName = QuoteauUITests;
+			productReference = C6430BE023AA5CB10093AF5E /* QuoteauUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		C6EB5612238BE6A300471ACC /* Quoteau */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6EB5627238BE6A600471ACC /* Build configuration list for PBXNativeTarget "Quoteau" */;
@@ -124,10 +232,18 @@
 		C6EB560B238BE6A300471ACC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Lunar Logic";
 				TargetAttributes = {
+					C6430BD123AA52740093AF5E = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = C6EB5612238BE6A300471ACC;
+					};
+					C6430BDF23AA5CB10093AF5E = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = C6EB5612238BE6A300471ACC;
+					};
 					C6EB5612238BE6A300471ACC = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -147,11 +263,27 @@
 			projectRoot = "";
 			targets = (
 				C6EB5612238BE6A300471ACC /* Quoteau */,
+				C6430BD123AA52740093AF5E /* QuoteauTests */,
+				C6430BDF23AA5CB10093AF5E /* QuoteauUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C6430BD023AA52740093AF5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6430BDE23AA5CB10093AF5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6EB5611238BE6A300471ACC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,6 +297,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F9AB9E9639F020A137271BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quoteau-Tests-QuoteauTests/Pods-Quoteau-Tests-QuoteauTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quoteau-Tests-QuoteauTests/Pods-Quoteau-Tests-QuoteauTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quoteau-Tests-QuoteauTests/Pods-Quoteau-Tests-QuoteauTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3496069E9311FCF1C7C21068 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		40FDEA4323A8EE3100D5F143 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,23 +347,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-   };
-    3496069E9311FCF1C7C21068 /* [CP] Copy Pods Resources */ = {
-            isa = PBXShellScriptBuildPhase;
-            buildActionMask = 2147483647;
-            files = (
-            );
-            inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		8A4C8AD640BA99574BB15ADD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -238,9 +387,64 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quoteau/Pods-Quoteau-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C9942A54EBECC448E8518BBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quoteau-Tests-QuoteauTests/Pods-Quoteau-Tests-QuoteauTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quoteau-Tests-QuoteauTests/Pods-Quoteau-Tests-QuoteauTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quoteau-Tests-QuoteauTests/Pods-Quoteau-Tests-QuoteauTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF33D99D88250C3A366CA927 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quoteau-Tests-QuoteauTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C6430BCE23AA52740093AF5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6430BD523AA52740093AF5E /* QuoteauTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6430BDC23AA5CB10093AF5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6430BE323AA5CB10093AF5E /* QuoteauUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6EB560F238BE6A300471ACC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +458,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C6430BD823AA52740093AF5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6EB5612238BE6A300471ACC /* Quoteau */;
+			targetProxy = C6430BD723AA52740093AF5E /* PBXContainerItemProxy */;
+		};
+		C6430BE623AA5CB10093AF5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6EB5612238BE6A300471ACC /* Quoteau */;
+			targetProxy = C6430BE523AA5CB10093AF5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		C6EB5621238BE6A600471ACC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -266,6 +483,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C6430BD923AA52740093AF5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F32C11E9F3F258D3E81DD78 /* Pods-Quoteau-Tests-QuoteauTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5RDH747R8;
+				INFOPLIST_FILE = QuoteauTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.lunarlogic.QuoteauTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quoteau.app/Quoteau";
+			};
+			name = Debug;
+		};
+		C6430BDA23AA52740093AF5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AB8377FE58E851BE0664B24 /* Pods-Quoteau-Tests-QuoteauTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5RDH747R8;
+				INFOPLIST_FILE = QuoteauTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.lunarlogic.QuoteauTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quoteau.app/Quoteau";
+			};
+			name = Release;
+		};
+		C6430BE823AA5CB10093AF5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5RDH747R8;
+				INFOPLIST_FILE = QuoteauUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.lunarlogic.QuoteauUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Quoteau;
+			};
+			name = Debug;
+		};
+		C6430BE923AA5CB10093AF5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5RDH747R8;
+				INFOPLIST_FILE = QuoteauUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.lunarlogic.QuoteauUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Quoteau;
+			};
+			name = Release;
+		};
 		C6EB5625238BE6A600471ACC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -427,6 +724,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C6430BDB23AA52740093AF5E /* Build configuration list for PBXNativeTarget "QuoteauTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6430BD923AA52740093AF5E /* Debug */,
+				C6430BDA23AA52740093AF5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6430BE723AA5CB10093AF5E /* Build configuration list for PBXNativeTarget "QuoteauUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6430BE823AA5CB10093AF5E /* Debug */,
+				C6430BE923AA5CB10093AF5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C6EB560E238BE6A300471ACC /* Build configuration list for PBXProject "Quoteau" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
