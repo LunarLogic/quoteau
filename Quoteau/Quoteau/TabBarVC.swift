@@ -19,10 +19,10 @@ class TabBarVC: UITabBarController {
     fileprivate func setupViewControllers() {
 
         guard let homeImage = UIImage.init(systemName: "house"),
-            let homeSelectedImage = UIImage.init(systemName: "house.fill"),
-        let cameraImage = UIImage.init(systemName: "plus"),
-        let profileImage = UIImage(systemName: "person"),
-        let profileSelectedImage = UIImage(systemName: "person.fill")
+              let homeSelectedImage = UIImage.init(systemName: "house.fill"),
+              let cameraImage = UIImage.init(systemName: "plus"),
+              let profileImage = UIImage(systemName: "person"),
+              let profileSelectedImage = UIImage(systemName: "person.fill")
         else { return }
 
         let homeViewController = templateNavController(image: homeImage,
