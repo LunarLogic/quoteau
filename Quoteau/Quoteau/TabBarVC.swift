@@ -9,12 +9,31 @@
 import UIKit
 import FirebaseFirestore
 
-class TabBarVC: UITabBarController {
+class TabBarVC: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllers()
+        delegate = self
     }
+
+    func tabBarController(_ tabBarController: UITabBarController,
+                          shouldSelect viewController: UIViewController)
+    -> Bool {
+
+           let index = viewControllers?.firstIndex(of: viewController)
+           if index == 1 {
+
+               let quoteselectionVC = QuoteSelectionVC()
+               let navController = UINavigationController(rootViewController: quoteselectionVC)
+            navController.modalPresentationStyle = .fullScreen
+               present(navController, animated: true, completion: nil)
+
+               return false
+           }
+
+           return true
+       }
 
     fileprivate func setupViewControllers() {
 

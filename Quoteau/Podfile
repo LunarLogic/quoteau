@@ -28,6 +28,10 @@ target 'Quoteau' do
   # Pod for local database
   pod 'RealmSwift'
 
+  # Pods for Rxswift
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
   # Pods for Unit tests
    abstract_target 'Tests' do
     target "QuoteauTests"
