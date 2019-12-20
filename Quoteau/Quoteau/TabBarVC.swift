@@ -24,8 +24,8 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
            let index = viewControllers?.firstIndex(of: viewController)
            if index == 1 {
 
-               let quoteselectionVC = QuoteSelectionVC()
-               let navController = UINavigationController(rootViewController: quoteselectionVC)
+               let quoteSelectionVC = QuoteSelectionVC()
+               let navController = UINavigationController(rootViewController: quoteSelectionVC)
             navController.modalPresentationStyle = .fullScreen
                present(navController, animated: true, completion: nil)
 

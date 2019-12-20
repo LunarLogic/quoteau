@@ -187,22 +187,26 @@ class QuoteSelectionVC: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey]
             as? NSValue)?.cgRectValue {
-            drawView.drawingDisabled = true
-            view.frame.origin.y -= keyboardSize.height
-            self.keyboardSize = keyboardSize.height
-            strechResultViewButton.isHidden = true
+            if view.frame.origin.y == 0 {
+                drawView.drawingEnabled = false
+                view.frame.origin.y -= keyboardSize.height
+                self.keyboardSize = keyboardSize.height
+                strechResultViewButton.isHidden = true
 
-            if resultView.frame.height + keyboardSize.height + 150 > view.frame.height {
-                self.resultViewTopAnchor?.update(inset: 0)
-                self.view.layoutIfNeeded()
+                if resultView.frame.height + keyboardSize.height + 150 > view.frame.height {
+                    self.resultViewTopAnchor?.update(inset: 0)
+                    self.view.layoutIfNeeded()
+                }
             }
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        view.frame.origin.y += self.keyboardSize ?? 0.0
-        strechResultViewButton.isHidden = false
-        drawView.drawingDisabled = false
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y += self.keyboardSize ?? 0.0
+            strechResultViewButton.isHidden = false
+            drawView.drawingEnabled = true
+        }
     }
 
     // MARK: - Navigation
@@ -289,7 +293,7 @@ class QuoteSelectionVC: UIViewController {
 }
 
 // MARK: - Extension
-extension QuoteSelectionVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate, NewLineDelgate {
+extension QuoteSelectionVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate, NewLineDelegate {
     func hideKeybord() {
         textView.resignFirstResponder()
     }
@@ -327,7 +331,7 @@ extension QuoteSelectionVC: UINavigationControllerDelegate, UIImagePickerControl
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
 
             imageView.contentMode = .scaleAspectFit
-            let fixedImage = pickedImage.fixOrientation()
+            let fixedImage = pickedImage.straightenImageOrientation()
             imageView.image = fixedImage
             drawFrames(in: imageView, words: true)
         }

@@ -32,7 +32,7 @@ class ImageProcessor {
     func process(in imageView: UIImageView,
                  singleWords: Bool,
                  callback: @escaping (_ text: String,
-        _ textElement: [TextElement]) -> Void) {
+                 _ textElement: [TextElement]) -> Void) {
         guard let image = imageView.image else { return }
         let visionImage = VisionImage(image: image)
 

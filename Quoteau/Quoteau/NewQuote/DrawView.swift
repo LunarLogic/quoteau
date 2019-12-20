@@ -8,19 +8,21 @@
 
 import UIKit
 
-protocol NewLineDelgate {
+protocol NewLineDelegate: AnyObject {
     func didAddNewLine(point: CGPoint)
     func hideKeybord()
 }
 
 class DrawView: UIView {
 
-    var delegate: NewLineDelgate?
-    var drawingDisabled = false
+    var points = [CGPoint]()
+    var lines = [[CGPoint]]()
+    weak var delegate: NewLineDelegate?
+    var drawingEnabled = true
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        guard drawingDisabled == false else { return }
+        guard drawingEnabled else { return }
         guard let context = UIGraphicsGetCurrentContext() else { return }
         context.setLineWidth(10)
         context.setStrokeColor(UIColor(white: 0.9, alpha: 0.3).cgColor)
@@ -38,20 +40,16 @@ class DrawView: UIView {
         context.strokePath()
     }
 
-    var points = [CGPoint]()
-
-    var lines = [[CGPoint]]()
-
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         delegate?.hideKeybord()
-        guard drawingDisabled == false else { return }
+        guard drawingEnabled else { return }
         lines.append([CGPoint]())
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard drawingDisabled == false else { return }
+        guard drawingEnabled else { return }
         guard let point = touches.first?.location(in: self),
-            var lastLine = lines.popLast() else { return }
+              var lastLine = lines.popLast() else { return }
         points.append(point)
         lastLine.append(point)
         lines.append(lastLine)
