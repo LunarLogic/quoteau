@@ -8,7 +8,12 @@
 
 import Firebase
 
-struct TextElement {
+struct TextElement: Equatable {
+    static func == (lhs: TextElement, rhs: TextElement) -> Bool {
+        return lhs.text == rhs.text &&
+               lhs.index == rhs.index
+    }
+
     let text: String
     let scaledElement: ScaledElement
     let index: Int
