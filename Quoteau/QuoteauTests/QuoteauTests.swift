@@ -6,28 +6,33 @@
 //  Copyright © 2019 Lunar Logic. All rights reserved.
 //
 
-import XCTest
+import Quick
+import Nimble
+//import XCTest
 
-class QuoteauTests: XCTestCase {
+@testable import Quoteau
+class QuoteauTests: QuickSpec {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    override func spec() {
+        var imageProcessor: ImageProcessor!
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        beforeEach {
+            imageProcessor = ImageProcessor()
+        }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        describe("image processing") {
+            context("read text from screen shot") {
+                it("should transform image to text") {
+                    let imageView = UIImageView(image: UIImage(named: "screenshot_for_test"))
+                    waitUntil { done in
+                        imageProcessor.process(in: imageView, singleWords: true) { (text, _) in
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+                            expect(text).to(equal("Writing beautiful, performant applications is"))
+                            done()
+                        }
+                    }
+                }
+            }
         }
     }
-
 }
