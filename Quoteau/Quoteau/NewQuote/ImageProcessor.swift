@@ -7,11 +7,12 @@
 //
 
 import Firebase
+import RxSwift
 
 struct TextElement: Equatable {
     static func == (lhs: TextElement, rhs: TextElement) -> Bool {
         return lhs.text == rhs.text &&
-               lhs.index == rhs.index
+            lhs.index == rhs.index
     }
 
     let text: String
@@ -35,9 +36,21 @@ class ImageProcessor {
     }
 
     func process(in imageView: UIImageView,
-                 singleWords: Bool,
-                 callback: @escaping (_ text: String,
-                 _ textElement: [TextElement]) -> Void) {
+                 singleWords: Bool) -> Observable<(String, [TextElement])> {
+
+        return Observable<(String, [TextElement])>.create { observer in
+
+            self.process(in: imageView, singleWords: singleWords) { (text, textElement) in
+                observer.onNext((text, textElement))
+            }
+            return Disposables.create()
+        }
+    }
+
+    private func process(in imageView: UIImageView,
+                         singleWords: Bool,
+                         callback: @escaping (_ text: String,
+        _ textElement: [TextElement]) -> Void) {
         guard let image = imageView.image else { return }
         let visionImage = VisionImage(image: image)
 

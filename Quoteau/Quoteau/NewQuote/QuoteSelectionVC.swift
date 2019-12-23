@@ -8,53 +8,35 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class QuoteSelectionVC: UIViewController {
 
-    let processor = ImageProcessor()
-    let frameSublayer = CALayer()
-
+    var viewModel: QuoteSelectionViewModel?
+    let disposeBag = DisposeBag()
+    var keyboardSize: CGFloat?
     var resultViewTopAnchor: Constraint?
     var spaceForResultView: CGFloat?
     var resultViewFrame: CGFloat?
 
-    var fullText = [(text: String, index: Int)]()
-    var points = [CGPoint]()
-    var allElement: [TextElement]?
-    var unchangedElements = [TextElement]()
-
-    var scannedText: String? {
-        didSet {
-            textView.text = scannedText
-        }
-    }
-
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        viewModel = QuoteSelectionViewModel(drawView: drawView)
+
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             presentImagePickerController(withSourceType: .camera)
         }
 
         view.backgroundColor = .systemGray6
         setupViews()
+        setupBinding()
         setupNavigation()
+        setupKeyboardNotifications()
         addSwipeGesture(view: strechResultViewButton)
         resultView.layoutIfNeeded()
         textView.alwaysBounceVertical = true
-        imageView.layer.addSublayer(frameSublayer)
-        drawFrames(in: imageView, words: true)
-        drawView.delegate = self
-
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow),
-                                               name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -74,6 +56,41 @@ class QuoteSelectionVC: UIViewController {
         }
     }
 
+    // MARK: - Bindings
+    fileprivate func setupBinding() {
+        guard let viewModel = viewModel else { return }
+
+        viewModel.drawFrames(in: imageView, words: true)
+
+        viewModel.frameSublayer
+            .asObservable()
+            .subscribe(onNext: { [weak self] layer in
+                DispatchQueue.main.async {
+                    self?.imageView.layer.addSublayer(layer)
+                }
+            }).disposed(by: disposeBag)
+
+        viewModel.scannedText
+            .subscribe(onNext: { [weak self] text in
+            DispatchQueue.main.async {
+                self?.textView.text = text
+            }
+        }).disposed(by: disposeBag)
+
+        viewModel.fullText
+            .asObservable()
+            .subscribe(onNext: { [weak self] text in
+                DispatchQueue.main.async {
+                    self?.textView.text = text.reduce("") { $0 + " " + $1.text }
+                }
+            }).disposed(by: disposeBag)
+
+        drawView.keyboardHidden
+            .subscribe(onNext: { [weak self] _ in
+                self?.textView.resignFirstResponder()
+            }).disposed(by: disposeBag)
+    }
+
     // MARK: - Private
     @objc fileprivate func handleOpenCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -88,32 +105,7 @@ class QuoteSelectionVC: UIViewController {
     @objc fileprivate func handleSave() {
 
     }
-
-    private func removeFrames() {
-        guard let sublayers = frameSublayer.sublayers else { return }
-        for sublayer in sublayers {
-            sublayer.removeFromSuperlayer()
-        }
-    }
-
-    private func drawFrames(in imageView: UIImageView, words: Bool, completion: (() -> Void)? = nil) {
-        removeFrames()
-        processor.process(in: imageView, singleWords: words) { text, textElements  in
-            self.unchangedElements = textElements
-            self.allElement = textElements
-            self.points.removeAll()
-            self.fullText.removeAll()
-            self.drawView.clear()
-
-            for element in textElements.enumerated() {
-                self.frameSublayer.addSublayer(element.element.scaledElement.shapeLayer)
-            }
-
-            self.scannedText = text
-            completion?()
-        }
-    }
-
+//MARK: - Stretchy View
     fileprivate func addSwipeGesture(view: UIView) {
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(handleStrech(sender:)))
         view.addGestureRecognizer(swipeGesture)
@@ -181,8 +173,6 @@ class QuoteSelectionVC: UIViewController {
         resultViewTopAnchor?.activate()
     }
 
-    var keyboardSize: CGFloat?
-
     // MARK: - Keyboard slide up
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey]
@@ -207,6 +197,18 @@ class QuoteSelectionVC: UIViewController {
             strechResultViewButton.isHidden = false
             drawView.drawingEnabled = true
         }
+    }
+
+    // MARK: Keyboard Notifications
+    fileprivate func setupKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
     }
 
     // MARK: - Navigation
@@ -292,30 +294,8 @@ class QuoteSelectionVC: UIViewController {
     }
 }
 
-// MARK: - Extension
-extension QuoteSelectionVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate, NewLineDelegate {
-    func hideKeybord() {
-        textView.resignFirstResponder()
-    }
-
-    func didAddNewLine(point: CGPoint) {
-        points.append(point)
-
-        if let allElement = allElement {
-            for (index, element) in allElement.enumerated() {
-
-                if self.points.first(where: { element.scaledElement.frame.contains($0) }) != nil {
-
-                    self.frameSublayer.addSublayer(element.scaledElement.selectedShapeLayer)
-
-                    fullText.append((element.text, element.index))
-                    self.allElement?.remove(at: index)
-                }
-            }
-            fullText.sort(by: {$0.index < $1.index })
-            self.textView.text = fullText.reduce("") { $0 + " " + $1.text }
-        }
-    }
+// MARK: - Extensions
+extension QuoteSelectionVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     private func presentImagePickerController(withSourceType sourceType: UIImagePickerController.SourceType) {
         let controller = UIImagePickerController()
@@ -333,7 +313,7 @@ extension QuoteSelectionVC: UINavigationControllerDelegate, UIImagePickerControl
             imageView.contentMode = .scaleAspectFit
             let fixedImage = pickedImage.straightenImageOrientation()
             imageView.image = fixedImage
-            drawFrames(in: imageView, words: true)
+            viewModel?.drawFrames(in: imageView, words: true)
         }
         dismiss(animated: true, completion: nil)
     }
