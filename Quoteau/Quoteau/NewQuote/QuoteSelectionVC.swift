@@ -105,7 +105,7 @@ class QuoteSelectionVC: UIViewController {
     @objc fileprivate func handleSave() {
 
     }
-//MARK: - Stretchy View
+    // MARK: - Stretchy View
     fileprivate func addSwipeGesture(view: UIView) {
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(handleStrech(sender:)))
         view.addGestureRecognizer(swipeGesture)
