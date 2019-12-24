@@ -7,17 +7,15 @@
 //
 
 import UIKit
-
-protocol NewLineDelegate: AnyObject {
-    func didAddNewLine(point: CGPoint)
-    func hideKeybord()
-}
+import RxSwift
+import RxCocoa
 
 class DrawView: UIView {
 
+    let keyboardHidden: PublishSubject<Void> = PublishSubject()
+    let intersectingPoints: BehaviorRelay<CGPoint> = BehaviorRelay(value: CGPoint())
     var points = [CGPoint]()
     var lines = [[CGPoint]]()
-    weak var delegate: NewLineDelegate?
     var drawingEnabled = true
 
     override func draw(_ rect: CGRect) {
@@ -41,7 +39,7 @@ class DrawView: UIView {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        delegate?.hideKeybord()
+        keyboardHidden.onNext(())
         guard drawingEnabled else { return }
         lines.append([CGPoint]())
     }
@@ -53,7 +51,7 @@ class DrawView: UIView {
         points.append(point)
         lastLine.append(point)
         lines.append(lastLine)
-        delegate?.didAddNewLine(point: point)
+        intersectingPoints.accept(point)
         setNeedsDisplay()
     }
 

@@ -10,6 +10,7 @@
 		8578409D4C98EC4CF8448487 /* Pods_Quoteau_Tests_QuoteauTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33714A4A30D23F828DED01B0 /* Pods_Quoteau_Tests_QuoteauTests.framework */; };
 		9A84DCCC31C3CA2D3814F0B7 /* Pods_Quoteau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4CCD66DF892D58BAACB822 /* Pods_Quoteau.framework */; };
 		C610CC5623A8E484007B109C /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C610CC5523A8E484007B109C /* TabBarVC.swift */; };
+		C6358EA523B0FB8100030798 /* QuoteSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */; };
 		C6430BD523AA52740093AF5E /* QuoteauTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6430BD423AA52740093AF5E /* QuoteauTests.swift */; };
 		C6430BE323AA5CB10093AF5E /* QuoteauUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6430BE223AA5CB10093AF5E /* QuoteauUITests.swift */; };
 		C6430BEC23AA7B3F0093AF5E /* QuoteSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6430BEB23AA7B3F0093AF5E /* QuoteSelectionVC.swift */; };
@@ -48,6 +49,7 @@
 		8AB8377FE58E851BE0664B24 /* Pods-Quoteau-Tests-QuoteauTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quoteau-Tests-QuoteauTests.release.xcconfig"; path = "Target Support Files/Pods-Quoteau-Tests-QuoteauTests/Pods-Quoteau-Tests-QuoteauTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D1BEAB8BAA267E3481FCA0C /* Pods-Quoteau.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quoteau.debug.xcconfig"; path = "Target Support Files/Pods-Quoteau/Pods-Quoteau.debug.xcconfig"; sourceTree = "<group>"; };
 		C610CC5523A8E484007B109C /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteSelectionViewModel.swift; sourceTree = "<group>"; };
 		C6430BD223AA52740093AF5E /* QuoteauTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuoteauTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6430BD423AA52740093AF5E /* QuoteauTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteauTests.swift; sourceTree = "<group>"; };
 		C6430BD623AA52740093AF5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				C6430BEB23AA7B3F0093AF5E /* QuoteSelectionVC.swift */,
 				C6430BED23AA7B830093AF5E /* ImageProcessor.swift */,
 				C6430BEF23AA7BB10093AF5E /* DrawView.swift */,
+				C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */,
 			);
 			path = NewQuote;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				C6430BEE23AA7B830093AF5E /* ImageProcessor.swift in Sources */,
 				C6EB5619238BE6A300471ACC /* SceneDelegate.swift in Sources */,
 				C6430BF223AB7E5D0093AF5E /* UIImage.swift in Sources */,
+				C6358EA523B0FB8100030798 /* QuoteSelectionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
