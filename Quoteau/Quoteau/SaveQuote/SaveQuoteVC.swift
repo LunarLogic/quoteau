@@ -28,6 +28,7 @@ class SaveQuoteVC: UIViewController {
         view.backgroundColor = .systemGray6
         setupConstraints()
         setupBindings()
+        self.hideKeyboardWhenTappedAround()
     }
 
     // MARK: - Bindings
