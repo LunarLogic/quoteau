@@ -8,10 +8,12 @@
 
 import Quick
 import Nimble
+import RxSwift
 
 @testable import Quoteau
 class QuoteauTests: QuickSpec {
 
+    let disposeBag = DisposeBag()
     let imageView = UIImageView(image: UIImage(named: "screenshot_for_test"))
     let defaultScaledElement = ScaledElement(frame: .zero,
                                              shapeLayer: CALayer(),
@@ -38,14 +40,17 @@ class QuoteauTests: QuickSpec {
             context("read text lines from screen shot") {
                 it("should transform image to text") {
                     waitUntil { done in
-                        imageProcessor.process(in: imageView, singleWords: false) { (text, wordsFromLines) in
+
+                        imageProcessor.process(in: imageView, singleWords: false)
+                            .asObservable()
+                            .subscribe(onNext: { (text, wordsFromLines) in
                             let textInLine = (TextElement(text: "Writing beautiful, performant applications is",
                                                           scaledElement: scaledElement,
                                                           index: 0))
                             expect(wordsFromLines).to(equal([textInLine]))
                             expect(text).to(equal("Writing beautiful, performant applications is"))
                             done()
-                        }
+                            }).disposed(by: self.disposeBag)
                     }
                 }
             }
@@ -58,7 +63,10 @@ class QuoteauTests: QuickSpec {
             context("single words") {
                 it("should transfor image into single words") {
                     waitUntil { done in
-                        imageProcessor.process(in: imageView, singleWords: true) { (text, singleWords) in
+
+                        imageProcessor.process(in: imageView, singleWords: true)
+                        .asObservable()
+                            .subscribe(onNext: { (text, singleWords) in
 
                             let firstWord = (TextElement(text: "Writing",
                                                          scaledElement: scaledElement,
@@ -85,7 +93,8 @@ class QuoteauTests: QuickSpec {
 
                             expect(text).to(equal("Writing beautiful, performant applications is"))
                             done()
-                        }
+
+                            }).disposed(by: self.disposeBag)
                     }
                 }
             }
