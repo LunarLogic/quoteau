@@ -104,7 +104,8 @@ class QuoteSelectionVC: UIViewController {
 
     @objc fileprivate func handleSave() {
         let saveQuoteController = SaveQuoteVC()
-        navigationController?.pushViewController(saveQuoteController, animated: true)
+        saveQuoteController.quote = textView.text
+            navigationController?.pushViewController(saveQuoteController, animated: true)
     }
 
     // MARK: - Stretchy View
