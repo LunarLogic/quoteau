@@ -103,8 +103,10 @@ class QuoteSelectionVC: UIViewController {
     }
 
     @objc fileprivate func handleSave() {
-
+        let saveQuoteController = SaveQuoteVC()
+        navigationController?.pushViewController(saveQuoteController, animated: true)
     }
+
     // MARK: - Stretchy View
     fileprivate func addSwipeGesture(view: UIView) {
         let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(handleStrech(sender:)))
