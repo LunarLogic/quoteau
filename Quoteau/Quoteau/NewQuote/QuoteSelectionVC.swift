@@ -195,8 +195,11 @@ class QuoteSelectionVC: UIViewController {
         if view.frame.origin.y != 0 {
             view.frame.origin.y += self.keyboardSize ?? 0.0
             strechResultViewButton.isHidden = false
-            drawView.drawingEnabled = true
         }
+    }
+
+    @objc func keyboardDidHide() {
+        drawView.drawingEnabled = true
     }
 
     // MARK: Keyboard Notifications
@@ -208,6 +211,10 @@ class QuoteSelectionVC: UIViewController {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillHide),
                                                name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardDidHide),
+                                               name: UIResponder.keyboardDidHideNotification,
                                                object: nil)
     }
 
