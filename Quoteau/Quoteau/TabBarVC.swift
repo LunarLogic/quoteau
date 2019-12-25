@@ -46,7 +46,7 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
 
         let homeViewController = templateNavController(image: homeImage,
                                                        selectedImage: homeSelectedImage,
-                                                       rootViewController: UIViewController())
+                                                       rootViewController: HomeVC())
 
         let cameraViewController = templateNavController(image: cameraImage, selectedImage: cameraImage)
 
