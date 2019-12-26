@@ -12,4 +12,8 @@ enum Constraints {
     static let topTabBarIconSpacing: CGFloat = 4
     static let bottomTabBarIconSpacing: CGFloat = -4
     static let smallestHeightForTextView = 200
+    static let searchHeaderHomeVCHeight: CGFloat = 74
+    static let titlesHeadersHomeVCHeight: CGFloat = 40
+    static let quoteCellHeight: CGFloat = 90
+    static let tagsCollectionViewHeight: CGFloat = 60
 }
