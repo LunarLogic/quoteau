@@ -48,9 +48,12 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
                                                        selectedImage: homeSelectedImage,
                                                        rootViewController: HomeVC())
 
-        let cameraViewController = templateNavController(image: cameraImage, selectedImage: cameraImage)
+        let cameraViewController = templateNavController(image: cameraImage,
+                                                         selectedImage: cameraImage)
 
-        let profileViewController = templateNavController(image: profileImage, selectedImage: profileSelectedImage)
+        let profileViewController = templateNavController(image: profileImage,
+                                                          selectedImage: profileSelectedImage,
+                                                          rootViewController: ProfileVC())
 
         viewControllers = [homeViewController, cameraViewController, profileViewController]
 

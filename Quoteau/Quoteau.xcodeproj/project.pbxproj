@@ -34,6 +34,7 @@
 		C6EB5620238BE6A600471ACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6EB561F238BE6A600471ACC /* Assets.xcassets */; };
 		C6EB5623238BE6A600471ACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6EB5621238BE6A600471ACC /* LaunchScreen.storyboard */; };
 		C6EFE61223B410470054C172 /* TitleCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFE61123B410470054C172 /* TitleCollectionViewHeader.swift */; };
+		C6EFE61523B4FC7A0054C172 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFE61423B4FC7A0054C172 /* ProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		C6EB5622238BE6A600471ACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6EB5624238BE6A600471ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6EFE61123B410470054C172 /* TitleCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewHeader.swift; sourceTree = "<group>"; };
+		C6EFE61423B4FC7A0054C172 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		CE4CCD66DF892D58BAACB822 /* Pods_Quoteau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quoteau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -221,6 +223,7 @@
 		C6EB5615238BE6A300471ACC /* Quoteau */ = {
 			isa = PBXGroup;
 			children = (
+				C6EFE61323B4FC6C0054C172 /* Profile */,
 				C61A2AD323B25CB500D1FD10 /* Home */,
 				C6358EB123B2524C00030798 /* Models */,
 				C6430BF523ABDC2B0093AF5E /* Extensions */,
@@ -238,6 +241,14 @@
 				C6A1E80E23A8F95600E8C938 /* GoogleService-Info.plist */,
 			);
 			path = Quoteau;
+			sourceTree = "<group>";
+		};
+		C6EFE61323B4FC6C0054C172 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C6EFE61423B4FC7A0054C172 /* ProfileVC.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		EABF3E0098E8CFC2273BB6EE /* Pods */ = {
@@ -546,6 +557,7 @@
 				C6358EAE23B21D9E00030798 /* Quote.swift in Sources */,
 				C61A2ADB23B3F74A00D1FD10 /* SearchTableViewHeader.swift in Sources */,
 				C6358EA823B20FED00030798 /* SaveQuoteVC.swift in Sources */,
+				C6EFE61523B4FC7A0054C172 /* ProfileVC.swift in Sources */,
 				C6430BEC23AA7B3F0093AF5E /* QuoteSelectionVC.swift in Sources */,
 				C6358EAC23B21CBF00030798 /* LocalAPICommunicator.swift in Sources */,
 				C61A2AD523B25CCC00D1FD10 /* HomeVC.swift in Sources */,
