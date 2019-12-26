@@ -13,6 +13,8 @@
 		C61A2AD223B2565100D1FD10 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2AD123B2565100D1FD10 /* UIViewController.swift */; };
 		C61A2AD523B25CCC00D1FD10 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2AD423B25CCC00D1FD10 /* HomeVC.swift */; };
 		C61A2AD723B25DBF00D1FD10 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2AD623B25DBF00D1FD10 /* HomeViewModel.swift */; };
+		C61A2AD923B3C96A00D1FD10 /* QuoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2AD823B3C96A00D1FD10 /* QuoteCollectionViewCell.swift */; };
+		C61A2ADB23B3F74A00D1FD10 /* SearchTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2ADA23B3F74A00D1FD10 /* SearchTableViewHeader.swift */; };
 		C6358EA523B0FB8100030798 /* QuoteSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */; };
 		C6358EA823B20FED00030798 /* SaveQuoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA723B20FED00030798 /* SaveQuoteVC.swift */; };
 		C6358EAA23B219A800030798 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA923B219A800030798 /* CustomTextField.swift */; };
@@ -31,6 +33,7 @@
 		C6EB5619238BE6A300471ACC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EB5618238BE6A300471ACC /* SceneDelegate.swift */; };
 		C6EB5620238BE6A600471ACC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6EB561F238BE6A600471ACC /* Assets.xcassets */; };
 		C6EB5623238BE6A600471ACC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6EB5621238BE6A600471ACC /* LaunchScreen.storyboard */; };
+		C6EFE61223B410470054C172 /* TitleCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFE61123B410470054C172 /* TitleCollectionViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,8 @@
 		C61A2AD123B2565100D1FD10 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C61A2AD423B25CCC00D1FD10 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		C61A2AD623B25DBF00D1FD10 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C61A2AD823B3C96A00D1FD10 /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
+		C61A2ADA23B3F74A00D1FD10 /* SearchTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewHeader.swift; sourceTree = "<group>"; };
 		C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteSelectionViewModel.swift; sourceTree = "<group>"; };
 		C6358EA723B20FED00030798 /* SaveQuoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveQuoteVC.swift; sourceTree = "<group>"; };
 		C6358EA923B219A800030798 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 		C6EB561F238BE6A600471ACC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6EB5622238BE6A600471ACC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6EB5624238BE6A600471ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6EFE61123B410470054C172 /* TitleCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewHeader.swift; sourceTree = "<group>"; };
 		CE4CCD66DF892D58BAACB822 /* Pods_Quoteau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quoteau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,6 +134,9 @@
 			children = (
 				C61A2AD423B25CCC00D1FD10 /* HomeVC.swift */,
 				C61A2AD623B25DBF00D1FD10 /* HomeViewModel.swift */,
+				C61A2AD823B3C96A00D1FD10 /* QuoteCollectionViewCell.swift */,
+				C61A2ADA23B3F74A00D1FD10 /* SearchTableViewHeader.swift */,
+				C6EFE61123B410470054C172 /* TitleCollectionViewHeader.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -535,13 +544,16 @@
 				C6430BF023AA7BB10093AF5E /* DrawView.swift in Sources */,
 				C6A1E80D23A8F0DC00E8C938 /* Constraints.swift in Sources */,
 				C6358EAE23B21D9E00030798 /* Quote.swift in Sources */,
+				C61A2ADB23B3F74A00D1FD10 /* SearchTableViewHeader.swift in Sources */,
 				C6358EA823B20FED00030798 /* SaveQuoteVC.swift in Sources */,
 				C6430BEC23AA7B3F0093AF5E /* QuoteSelectionVC.swift in Sources */,
 				C6358EAC23B21CBF00030798 /* LocalAPICommunicator.swift in Sources */,
 				C61A2AD523B25CCC00D1FD10 /* HomeVC.swift in Sources */,
+				C6EFE61223B410470054C172 /* TitleCollectionViewHeader.swift in Sources */,
 				C6430BEE23AA7B830093AF5E /* ImageProcessor.swift in Sources */,
 				C6358EB023B22AB600030798 /* SaveQuoteViewModel.swift in Sources */,
 				C6EB5619238BE6A300471ACC /* SceneDelegate.swift in Sources */,
+				C61A2AD923B3C96A00D1FD10 /* QuoteCollectionViewCell.swift in Sources */,
 				C6430BF223AB7E5D0093AF5E /* UIImage.swift in Sources */,
 				C6358EA523B0FB8100030798 /* QuoteSelectionViewModel.swift in Sources */,
 				C61A2AD223B2565100D1FD10 /* UIViewController.swift in Sources */,
