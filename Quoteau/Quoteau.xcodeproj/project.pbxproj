@@ -16,6 +16,9 @@
 		C61A2AD923B3C96A00D1FD10 /* QuoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2AD823B3C96A00D1FD10 /* QuoteCollectionViewCell.swift */; };
 		C61A2ADB23B3F74A00D1FD10 /* SearchTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2ADA23B3F74A00D1FD10 /* SearchTableViewHeader.swift */; };
 		C6274C4423B7A72D0080E6B3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4323B7A72D0080E6B3 /* Common.swift */; };
+		C6274C4623BF57540080E6B3 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4523BF57540080E6B3 /* LoginVC.swift */; };
+		C6274C4823BF57C50080E6B3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4723BF57C50080E6B3 /* LoginViewModel.swift */; };
+		C6274C4A23BF78F10080E6B3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4923BF78F10080E6B3 /* ProfileViewModel.swift */; };
 		C6358EA523B0FB8100030798 /* QuoteSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */; };
 		C6358EA823B20FED00030798 /* SaveQuoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA723B20FED00030798 /* SaveQuoteVC.swift */; };
 		C6358EAA23B219A800030798 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA923B219A800030798 /* CustomTextField.swift */; };
@@ -71,6 +74,9 @@
 		C61A2AD823B3C96A00D1FD10 /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
 		C61A2ADA23B3F74A00D1FD10 /* SearchTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewHeader.swift; sourceTree = "<group>"; };
 		C6274C4323B7A72D0080E6B3 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		C6274C4523BF57540080E6B3 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		C6274C4723BF57C50080E6B3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C6274C4923BF78F10080E6B3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteSelectionViewModel.swift; sourceTree = "<group>"; };
 		C6358EA723B20FED00030798 /* SaveQuoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveQuoteVC.swift; sourceTree = "<group>"; };
 		C6358EA923B219A800030798 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -258,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				C6EFE61423B4FC7A0054C172 /* ProfileVC.swift */,
+				C6274C4923BF78F10080E6B3 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -267,6 +274,8 @@
 			children = (
 				C6EFE61923B5131B0054C172 /* RegistrationVC.swift */,
 				C6EFE61B23B515880054C172 /* RegistrationViewModel.swift */,
+				C6274C4523BF57540080E6B3 /* LoginVC.swift */,
+				C6274C4723BF57C50080E6B3 /* LoginViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -574,8 +583,10 @@
 				C610CC5623A8E484007B109C /* TabBarVC.swift in Sources */,
 				C6430BF023AA7BB10093AF5E /* DrawView.swift in Sources */,
 				C6A1E80D23A8F0DC00E8C938 /* Constraints.swift in Sources */,
+				C6274C4A23BF78F10080E6B3 /* ProfileViewModel.swift in Sources */,
 				C6358EAE23B21D9E00030798 /* Quote.swift in Sources */,
 				C61A2ADB23B3F74A00D1FD10 /* SearchTableViewHeader.swift in Sources */,
+				C6274C4823BF57C50080E6B3 /* LoginViewModel.swift in Sources */,
 				C6358EA823B20FED00030798 /* SaveQuoteVC.swift in Sources */,
 				C6EFE61523B4FC7A0054C172 /* ProfileVC.swift in Sources */,
 				C6EFE61A23B5131B0054C172 /* RegistrationVC.swift in Sources */,
@@ -590,6 +601,7 @@
 				C6358EB023B22AB600030798 /* SaveQuoteViewModel.swift in Sources */,
 				C6EB5619238BE6A300471ACC /* SceneDelegate.swift in Sources */,
 				C61A2AD923B3C96A00D1FD10 /* QuoteCollectionViewCell.swift in Sources */,
+				C6274C4623BF57540080E6B3 /* LoginVC.swift in Sources */,
 				C6430BF223AB7E5D0093AF5E /* UIImage.swift in Sources */,
 				C6358EA523B0FB8100030798 /* QuoteSelectionViewModel.swift in Sources */,
 				C61A2AD223B2565100D1FD10 /* UIViewController.swift in Sources */,
