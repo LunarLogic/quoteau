@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 class ProfileVC: UIViewController {
 
@@ -18,12 +19,22 @@ class ProfileVC: UIViewController {
         navigationItem.title = "User name"
     }
 
+    @objc fileprivate func handleChangeUserStatus() {
+        if Common.isUserLoggedIn {
+            RemoteAPICommunicator.shared.performLogout()
+        } else {
+            let navRegistrationVC = UINavigationController(rootViewController: RegistrationVC())
+                       present(navRegistrationVC, animated: true, completion: nil)
+        }
+    }
+
     // MARK: - Views
     let signInButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Sign In / Log out", for: .normal)
+        button.setTitle(Common.isUserLoggedIn ? "Logout" : "Sign In", for: .normal)
         button.backgroundColor = .blue
         button.layer.cornerRadius = 22
+        button.addTarget(self, action: #selector(handleChangeUserStatus), for: .touchUpInside)
         return button
     }()
     // MARK: - Constraints

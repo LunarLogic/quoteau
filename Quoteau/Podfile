@@ -13,6 +13,7 @@ target 'Quoteau' do
 
   # Pod for firebase
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
   # Pods for text recognition
   pod 'Firebase/MLVision'
