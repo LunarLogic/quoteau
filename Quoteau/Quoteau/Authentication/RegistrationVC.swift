@@ -24,7 +24,7 @@ class RegistrationVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemGray6
         setupBinding()
-        setupLayout()
+        setupConstraints()
         navigationController?.isNavigationBarHidden = true
     }
 
@@ -33,6 +33,7 @@ class RegistrationVC: UIViewController {
         viewModel.isUserRegistered
             .subscribe(onNext: { [weak self] isRegistered in
                 if isRegistered {
+                    self?.presentingViewController?.viewDidLoad()
                     self?.dismiss(animated: true, completion: nil)
                 } else {
                     print("Unable to register / alert")
@@ -75,23 +76,28 @@ class RegistrationVC: UIViewController {
         viewModel.register()
     }
 
+    @objc fileprivate func handleGoToLogin() {
+        let loginController = LoginVC()
+        navigationController?.pushViewController(loginController, animated: true)
+    }
+
     // MARK: - Views
     let nameTextField: CustomTextField = {
         let textField = CustomTextField(padding: 12)
-        textField.placeholder = "Enter full name"
+        textField.placeholder = "Name"
         return textField
     }()
 
     let emailTextField: CustomTextField = {
         let textField = CustomTextField(padding: 12)
-        textField.placeholder = "Enter email"
+        textField.placeholder = "Email"
         textField.keyboardType = .emailAddress
         return textField
     }()
 
     let passwordTextField: CustomTextField = {
         let textField = CustomTextField(padding: 12)
-        textField.placeholder = "Enter password"
+        textField.placeholder = "Password"
         textField.isSecureTextEntry = true
         return textField
     }()
@@ -106,8 +112,17 @@ class RegistrationVC: UIViewController {
         button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
         return button
     }()
+
+    let goToLoginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Go To Login", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        button.addTarget(self, action: #selector(handleGoToLogin), for: .touchUpInside)
+        return button
+    }()
+
     // MARK: - Constraints
-    fileprivate func setupLayout() {
+    fileprivate func setupConstraints() {
         stackView.axis = .vertical
         stackView.spacing = 10
         view.addSubview(stackView)
@@ -115,6 +130,12 @@ class RegistrationVC: UIViewController {
             make.leading.equalToSuperview().offset(35)
             make.trailing.equalToSuperview().inset(35)
             make.centerY.equalToSuperview()
+        }
+
+        view.addSubview(goToLoginButton)
+        goToLoginButton.snp.makeConstraints { (make) in
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
 }

@@ -28,12 +28,24 @@ class RemoteAPICommunicator {
         }
     }
 
-    func performLogout() {
+    func performLogout(completion: @escaping (Result<Void, Error>) -> Void) {
         do {
             try Auth.auth().signOut()
-            UserDefaults.standard.removeObject(forKey: "userUid")
+            completion(.success(()))
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
+            completion(.failure(signOutError))
+        }
+    }
+
+    func performLogin(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
+            if let err = err {
+                completion(.failure(err))
+                return
+            }
+            completion(.success(res?.user.uid ?? ""))
+            print("succesfuly login user", res?.user.uid ?? "" )
         }
     }
 }
