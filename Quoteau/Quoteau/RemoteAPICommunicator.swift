@@ -67,7 +67,7 @@ class RemoteAPICommunicator {
                                  name: String,
                                  uid: String,
                                  completion: @escaping (Result<Void, Error>) -> Void) {
-        let data = [email: email, name: name]
+        let data = ["email": email, "name": name]
         Firestore.firestore().collection(usersCollection).document(uid).setData(data) { (err) in
             if let err = err {
                 completion(.failure(err))
