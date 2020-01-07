@@ -21,7 +21,7 @@ class LocalAPICommunicator {
                 realm?.add(quote)
             }
         } catch {
-            print("Could not save quote localy")
+            print("Could not save quote locally")
         }
     }
 
