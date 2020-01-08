@@ -19,7 +19,7 @@ class RegistrationViewModel {
 
     func register() {
         RemoteAPICommunicator.shared.performRegistration(email: email.value,
-                                                         password: password.value) { result in
+                                                         password: password.value, name: fullName.value) { result in
                                                             switch result {
                                                             case .success(let uid):
                                                                 UserDefaults.standard.set(uid, forKey: "userUid")
