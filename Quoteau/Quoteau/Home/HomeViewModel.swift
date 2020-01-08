@@ -14,8 +14,10 @@ class HomeViewModel {
 
     let allQuotes: BehaviorRelay<[Quote]> = BehaviorRelay(value: [])
     let emptyScreen: PublishSubject<Bool> = PublishSubject()
+    let allTags: BehaviorRelay<Set<String>> = BehaviorRelay(value: [])
 
     func getQuotes() {
+        allQuotes.accept([])
         var quotes = [Quote]()
         LocalAPICommunicator.shared.readAllQuotes()?.forEach({ (quote) in
             quotes.append(quote)
@@ -24,8 +26,19 @@ class HomeViewModel {
         if quotes.isEmpty {
             emptyScreen.onNext(true)
         } else {
+
             emptyScreen.onNext(false)
             allQuotes.accept(quotes)
+        }
+    }
+
+    func extractTags() {
+        allQuotes.value.forEach { (quote) in
+            quote.tags.forEach { (tag) in
+                var tags = self.allTags.value
+                tags.insert(tag)
+                self.allTags.accept(tags)
+            }
         }
     }
 }

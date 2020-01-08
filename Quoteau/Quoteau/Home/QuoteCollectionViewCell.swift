@@ -11,6 +11,14 @@ import SnapKit
 
 class QuoteCollectionViewCell: UICollectionViewCell {
 
+    var quote: Quote? {
+        didSet {
+            guard let quote = quote else { return }
+            quoteLabel.text = quote.quote
+            quoteTitleLabel.text = quote.title
+        }
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         stackView.distribution = .fillProportionally
@@ -29,16 +37,14 @@ class QuoteCollectionViewCell: UICollectionViewCell {
 
     let quoteTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "qute title"
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         return label
     }()
 
     let quoteLabel: UILabel = {
         let label = UILabel()
-        label.text = "The beauty of democracy is that an average, random, unremarkable citizen can lead it."
         label.font = UIFont.systemFont(ofSize: 13, weight: .light)
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         return label
     }()
 }
