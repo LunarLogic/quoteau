@@ -14,11 +14,13 @@
 		C61A2AD523B25CCC00D1FD10 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2AD423B25CCC00D1FD10 /* HomeVC.swift */; };
 		C61A2AD723B25DBF00D1FD10 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2AD623B25DBF00D1FD10 /* HomeViewModel.swift */; };
 		C61A2AD923B3C96A00D1FD10 /* QuoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2AD823B3C96A00D1FD10 /* QuoteCollectionViewCell.swift */; };
-		C61A2ADB23B3F74A00D1FD10 /* SearchTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2ADA23B3F74A00D1FD10 /* SearchTableViewHeader.swift */; };
+		C61A2ADB23B3F74A00D1FD10 /* SearchCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A2ADA23B3F74A00D1FD10 /* SearchCollectionViewHeader.swift */; };
 		C6274C4423B7A72D0080E6B3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4323B7A72D0080E6B3 /* Common.swift */; };
 		C6274C4623BF57540080E6B3 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4523BF57540080E6B3 /* LoginVC.swift */; };
 		C6274C4823BF57C50080E6B3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4723BF57C50080E6B3 /* LoginViewModel.swift */; };
 		C6274C4A23BF78F10080E6B3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4923BF78F10080E6B3 /* ProfileViewModel.swift */; };
+		C6274C4E23C4D18B0080E6B3 /* TagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4D23C4D18B0080E6B3 /* TagsCell.swift */; };
+		C6274C5023C4D2FF0080E6B3 /* SingleTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4F23C4D2FF0080E6B3 /* SingleTagCell.swift */; };
 		C6358EA523B0FB8100030798 /* QuoteSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */; };
 		C6358EA823B20FED00030798 /* SaveQuoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA723B20FED00030798 /* SaveQuoteVC.swift */; };
 		C6358EAA23B219A800030798 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA923B219A800030798 /* CustomTextField.swift */; };
@@ -72,11 +74,13 @@
 		C61A2AD423B25CCC00D1FD10 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		C61A2AD623B25DBF00D1FD10 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C61A2AD823B3C96A00D1FD10 /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
-		C61A2ADA23B3F74A00D1FD10 /* SearchTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewHeader.swift; sourceTree = "<group>"; };
+		C61A2ADA23B3F74A00D1FD10 /* SearchCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewHeader.swift; sourceTree = "<group>"; };
 		C6274C4323B7A72D0080E6B3 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		C6274C4523BF57540080E6B3 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		C6274C4723BF57C50080E6B3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C6274C4923BF78F10080E6B3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		C6274C4D23C4D18B0080E6B3 /* TagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCell.swift; sourceTree = "<group>"; };
+		C6274C4F23C4D2FF0080E6B3 /* SingleTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTagCell.swift; sourceTree = "<group>"; };
 		C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteSelectionViewModel.swift; sourceTree = "<group>"; };
 		C6358EA723B20FED00030798 /* SaveQuoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveQuoteVC.swift; sourceTree = "<group>"; };
 		C6358EA923B219A800030798 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -151,8 +155,10 @@
 				C61A2AD423B25CCC00D1FD10 /* HomeVC.swift */,
 				C61A2AD623B25DBF00D1FD10 /* HomeViewModel.swift */,
 				C61A2AD823B3C96A00D1FD10 /* QuoteCollectionViewCell.swift */,
-				C61A2ADA23B3F74A00D1FD10 /* SearchTableViewHeader.swift */,
+				C61A2ADA23B3F74A00D1FD10 /* SearchCollectionViewHeader.swift */,
 				C6EFE61123B410470054C172 /* TitleCollectionViewHeader.swift */,
+				C6274C4D23C4D18B0080E6B3 /* TagsCell.swift */,
+				C6274C4F23C4D2FF0080E6B3 /* SingleTagCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -579,13 +585,15 @@
 			files = (
 				C61A2AD723B25DBF00D1FD10 /* HomeViewModel.swift in Sources */,
 				C6EB5617238BE6A300471ACC /* AppDelegate.swift in Sources */,
+				C6274C5023C4D2FF0080E6B3 /* SingleTagCell.swift in Sources */,
 				C6358EAA23B219A800030798 /* CustomTextField.swift in Sources */,
 				C610CC5623A8E484007B109C /* TabBarVC.swift in Sources */,
+				C6274C4E23C4D18B0080E6B3 /* TagsCell.swift in Sources */,
 				C6430BF023AA7BB10093AF5E /* DrawView.swift in Sources */,
 				C6A1E80D23A8F0DC00E8C938 /* Constraints.swift in Sources */,
 				C6274C4A23BF78F10080E6B3 /* ProfileViewModel.swift in Sources */,
 				C6358EAE23B21D9E00030798 /* Quote.swift in Sources */,
-				C61A2ADB23B3F74A00D1FD10 /* SearchTableViewHeader.swift in Sources */,
+				C61A2ADB23B3F74A00D1FD10 /* SearchCollectionViewHeader.swift in Sources */,
 				C6274C4823BF57C50080E6B3 /* LoginViewModel.swift in Sources */,
 				C6358EA823B20FED00030798 /* SaveQuoteVC.swift in Sources */,
 				C6EFE61523B4FC7A0054C172 /* ProfileVC.swift in Sources */,

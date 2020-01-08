@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class SearchTableViewHeader: UICollectionViewCell {
+class SearchCollectionViewHeader: UICollectionViewCell {
 
     let searchTextField: CustomTextField = {
         let textField = CustomTextField(padding: 12)

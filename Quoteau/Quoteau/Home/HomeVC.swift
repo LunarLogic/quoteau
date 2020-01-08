@@ -18,25 +18,31 @@ class HomeVC: UIViewController {
     let quotesCellsId = "quotesCellsId"
     let searchHeaderID = "searchHeaderId"
     let titleHeaderId = "titleHeaderId"
+    let tagCellId = "tagCellId"
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray6
         setupConstraints()
+        navigationController?.navigationBar.isHidden = true
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.delegate = nil
+        collectionView.dataSource = nil
         setupBindings()
         viewModel.getQuotes()
+        viewModel.extractTags()
         setupCollectionView()
-        navigationController?.navigationBar.isHidden = true
     }
 
     // MARK: - Bindings
     fileprivate func setupBindings() {
         viewModel.allQuotes
             .asObservable()
-            .subscribe(onNext: { quotes in
-                // quotes for collection view
-                print(quotes)
+            .subscribe(onNext: { _ in
             }).disposed(by: disposeBag)
 
         viewModel.emptyScreen
@@ -47,13 +53,19 @@ class HomeVC: UIViewController {
                     self?.collectionView.isHidden = false
                 }
             }).disposed(by: disposeBag)
+
+        viewModel.allTags
+            .asObservable()
+            .subscribe(onNext: { _ in
+            }).disposed(by: disposeBag)
     }
 
     // MARK: - Private
     fileprivate func setupCollectionView() {
         collectionView.register(QuoteCollectionViewCell.self,
                                 forCellWithReuseIdentifier: quotesCellsId)
-        collectionView.register(SearchTableViewHeader.self,
+        collectionView.register(TagsCell.self, forCellWithReuseIdentifier: tagCellId)
+        collectionView.register(SearchCollectionViewHeader.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: searchHeaderID)
         collectionView.register(TitleCollectionViewHeader.self,
@@ -115,7 +127,8 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
         case 0:
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                                withReuseIdentifier: searchHeaderID,
-                                                                               for: indexPath) as? SearchTableViewHeader
+                                                                               for: indexPath)
+                as? SearchCollectionViewHeader
                 else {
                     fatalError("Unable to dequeue SearchTableViewHeader")
             }
@@ -161,7 +174,6 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-
         switch indexPath.section {
         case 1:
             return CGSize(width: view.frame.width, height: Constraints.tagsCollectionViewHeight)
@@ -179,7 +191,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
         case 1:
             return 1
         case 2:
-            return 10
+            return viewModel.allQuotes.value.count
         default:
             return 0
         }
@@ -189,14 +201,13 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 1:
-            // Future tags collectionView
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: quotesCellsId,
-                                                                for: indexPath) as? QuoteCollectionViewCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tagCellId,
+                                                                for: indexPath) as? TagsCell
                 else {
                     fatalError("Unable to dequeue QuoteCollectionViewCell")
             }
-            cell.quoteLabel.text = ""
-            cell.quoteTitleLabel.text = "(Tags in future)"
+            let allTags = Array(viewModel.allTags.value)
+            cell.allTags = allTags
             return cell
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: quotesCellsId,
@@ -204,6 +215,8 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
                 else {
                     fatalError("Unable to dequeue QuoteCollectionViewCell")
             }
+            cell.prepareForReuse()
+            cell.quote = viewModel.allQuotes.value[indexPath.item]
             return cell
         default:
             fatalError("Unnkonw cells")

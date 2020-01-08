@@ -15,5 +15,5 @@ enum Constraints {
     static let searchHeaderHomeVCHeight: CGFloat = 74
     static let titlesHeadersHomeVCHeight: CGFloat = 40
     static let quoteCellHeight: CGFloat = 90
-    static let tagsCollectionViewHeight: CGFloat = 60
+    static let tagsCollectionViewHeight: CGFloat = 44
 }
