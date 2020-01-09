@@ -11,6 +11,9 @@ target 'Quoteau' do
   pod 'SnapKit', '~> 5.0'
   pod 'SwiftLint'
 
+  # Pod for codable firebase
+  pod 'CodableFirebase'
+  
   # Pod for firebase
   pod 'Firebase/Core'
   pod 'Firebase/Auth'

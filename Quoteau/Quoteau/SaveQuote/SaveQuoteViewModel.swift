@@ -29,6 +29,14 @@ class SaveQuoteViewModel {
                           bookTitle: bookTitle.value)
 
         LocalAPICommunicator.shared.saveQuote(quote: quote)
+        RemoteAPICommunicator.shared.saveQuotesInFirestre(quotes: [quote]) { (result) in
+            switch result {
+            case .success:
+                print("Saved quote in firestore")
+            case .failure(let err):
+                print(err)
+            }
+        }
     }
 
     fileprivate func separateTags(string: String) -> [String] {

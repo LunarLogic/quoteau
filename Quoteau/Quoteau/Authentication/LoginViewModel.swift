@@ -24,10 +24,25 @@ class LoginViewModel {
             switch result {
             case .success(let uid):
                 UserDefaults.standard.set(uid, forKey: "userUid")
-                self.userLogged.onCompleted()
+                self.sendQuotesToFirebase()
             case .failure(let error):
                 print(error)
                 self.isLoggingIn.onNext(false)
+            }
+        }
+    }
+
+    fileprivate func sendQuotesToFirebase() {
+        var quotes = [Quote]()
+        LocalAPICommunicator.shared.readAllQuotes()?.forEach({ (quote) in
+            quotes.append(quote)
+        })
+        RemoteAPICommunicator.shared.saveQuotesInFirestre(quotes: quotes) { (result) in
+            switch result {
+            case .success:
+                self.userLogged.onCompleted()
+            case .failure(let err):
+                print(err)
             }
         }
     }

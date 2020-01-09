@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Quote: Object {
+class Quote: Object, Codable {
     @objc dynamic var quote: String = ""
     @objc dynamic var title: String = ""
     @objc dynamic var author: String? = ""

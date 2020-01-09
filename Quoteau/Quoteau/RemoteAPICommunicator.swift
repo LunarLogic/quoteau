@@ -9,12 +9,14 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import CodableFirebase
 
 class RemoteAPICommunicator {
 
     static let shared = RemoteAPICommunicator()
 
     let usersCollection = "users"
+    let quotesCollection = "quotes"
 
     private init() { }
 
@@ -74,6 +76,28 @@ class RemoteAPICommunicator {
                 return
             }
             completion(.success(()))
+        }
+    }
+
+    func saveQuotesInFirestre(quotes: [Quote], completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let uid = Common.userUid else { return }
+        quotes.forEach { (quote) in
+            do {
+                guard let docData = try FirebaseEncoder().encode(quote) as? [String: Any] else { return }
+                Firestore.firestore()
+                    .collection(usersCollection)
+                    .document(uid)
+                    .collection(quotesCollection)
+                    .document(quote.timestamp)
+                    .setData(docData) { (err) in
+                        if let err = err {
+                            completion(.failure(err))
+                        }
+                        completion(.success(()))
+                }
+            } catch {
+                print("Unable to encode data")
+            }
         }
     }
 }
