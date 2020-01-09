@@ -32,17 +32,23 @@ class HomeVC: UIViewController {
         super.viewWillAppear(animated)
         collectionView.delegate = nil
         collectionView.dataSource = nil
+        setupCollectionView()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setupBindings()
+        setupBindingsAfterViewAppear()
         viewModel.getQuotes()
         viewModel.extractTags()
-        setupCollectionView()
     }
 
     // MARK: - Bindings
     fileprivate func setupBindings() {
         viewModel.allQuotes
             .asObservable()
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { [weak self] quotes in
+                self?.viewModel.filteredQuotes.accept(quotes)
             }).disposed(by: disposeBag)
 
         viewModel.emptyScreen
@@ -56,7 +62,43 @@ class HomeVC: UIViewController {
 
         viewModel.allTags
             .asObservable()
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { [weak self] tags in
+                self?.viewModel.filteredTags.accept(tags)
+            }).disposed(by: disposeBag)
+    }
+
+    fileprivate func setupBindingsAfterViewAppear() {
+        viewModel.filteredQuotes
+            .asObservable()
+            .observeOn(MainScheduler.asyncInstance)
+            .subscribe(onNext: { [weak self] _ in
+                let indexSet: IndexSet = [2]
+                self?.collectionView.reloadSections(indexSet)
+            }).disposed(by: disposeBag)
+
+        viewModel.filteredTags
+            .asObservable()
+            .subscribe(onNext: { [weak self] _ in
+                let indexSet: IndexSet = [2]
+                self?.collectionView.reloadSections(indexSet)
+            }).disposed(by: disposeBag)
+
+        viewModel.filteringTags
+            .filter({$0 != []})
+            .asObservable()
+            .subscribe(onNext: { [weak self] selectedTags in
+                guard let viewModel = self?.viewModel else { return }
+                let quotes = viewModel.allQuotes.value.filter({ !Set($0.tags).isDisjoint(with: selectedTags)})
+
+                viewModel.filteredQuotes.accept(quotes)
+            }).disposed(by: disposeBag)
+
+        viewModel.searchText
+            .asObservable()
+            .filter({ $0.isEmpty})
+            .subscribe(onNext: { [weak self] _ in
+                guard let viewModel = self?.viewModel else { return }
+                viewModel.filteredQuotes.accept(viewModel.allQuotes.value)
             }).disposed(by: disposeBag)
     }
 
@@ -132,6 +174,15 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
                 else {
                     fatalError("Unable to dequeue SearchTableViewHeader")
             }
+            if !viewModel.searchText.value.isEmpty {
+                header.searchText.accept(viewModel.searchText.value)
+            }
+            header.searchText
+                .asObservable()
+                .subscribe(onNext: { [weak self] text in
+                    self?.viewModel.filterQuotesAndTags(by: text)
+                }).disposed(by: disposeBag)
+
             return header
         case 1:
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
@@ -191,7 +242,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
         case 1:
             return 1
         case 2:
-            return viewModel.allQuotes.value.count
+            return viewModel.filteredQuotes.value.count
         default:
             return 0
         }
@@ -204,10 +255,33 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tagCellId,
                                                                 for: indexPath) as? TagsCell
                 else {
-                    fatalError("Unable to dequeue QuoteCollectionViewCell")
+                    fatalError("Unable to dequeue TagsCell")
             }
-            let allTags = Array(viewModel.allTags.value)
-            cell.allTags = allTags
+            viewModel.searchText
+            .asObservable()
+            .subscribe(onNext: {  _ in
+//                guard let viewModel = self?.viewModel else { return }
+                cell.selectedTags.accept([])
+            }).disposed(by: disposeBag)
+
+            viewModel.filteredTags
+                .asObservable()
+                .subscribe(onNext: { tags in
+                    cell.allTags = Array(tags)
+                }).disposed(by: disposeBag)
+
+            viewModel.clearFilteringTags
+                .subscribe(onNext: { _ in
+                    cell.selectedTags.accept([])
+                }).disposed(by: disposeBag)
+
+            cell.selectedTags
+                .asObservable()
+//                .filter({ $0 != [] })
+                .subscribe(onNext: { [weak self] tags in
+                    self?.viewModel.filterQuotesByTags(tags: Set(tags))
+                }).disposed(by: disposeBag)
+            cell.allTags = Array(viewModel.filteredTags.value)
             return cell
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: quotesCellsId,
@@ -215,8 +289,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
                 else {
                     fatalError("Unable to dequeue QuoteCollectionViewCell")
             }
-            cell.prepareForReuse()
-            cell.quote = viewModel.allQuotes.value[indexPath.item]
+            cell.quote = viewModel.filteredQuotes.value[indexPath.item]
             return cell
         default:
             fatalError("Unnkonw cells")
@@ -225,5 +298,18 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
+    }
+}
+
+extension String {
+    func replace(string: String, replacement: String) -> String {
+        return self.replacingOccurrences(of: string,
+                                         with: replacement,
+                                         options: NSString.CompareOptions.literal,
+                                         range: nil)
+    }
+
+    func removeWhitespace() -> String {
+        return self.replace(string: " ", replacement: "")
     }
 }
