@@ -28,6 +28,7 @@ class HomeViewModel {
             quotes.append(quote)
         })
 
+        quotes.sort { $0.timestamp > $1.timestamp }
         if quotes.isEmpty {
             emptyScreen.onNext(true)
         } else {
