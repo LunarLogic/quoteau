@@ -15,6 +15,7 @@ class Quote: Object {
     @objc dynamic var author: String? = ""
     var tags = List<String>()
     @objc dynamic var bookTitle: String = ""
+    @objc dynamic var timestamp: String = ""
 
     convenience init(quote: String, title: String, author: String?, tags: [String], bookTitle: String) {
         self.init()
@@ -25,5 +26,14 @@ class Quote: Object {
         tags.forEach { listTags.append($0) }
         self.tags = listTags
         self.bookTitle = bookTitle
+        self.timestamp = createTimestamp()
+    }
+
+    fileprivate func createTimestamp() -> String {
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd_HH:mm:ss"
+        let formattedDate = format.string(from: date)
+        return formattedDate
     }
 }
