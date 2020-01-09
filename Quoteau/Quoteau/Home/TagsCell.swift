@@ -8,11 +8,15 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class TagsCell: UICollectionViewCell {
 
+    var selectedTags: BehaviorRelay<[String]> = BehaviorRelay(value: [])
     var allTags: [String]? {
         didSet {
+            selectedTags.accept([])
             collectionView.reloadData()
         }
     }
@@ -63,7 +67,7 @@ extension TagsCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 60, height: frame.height)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: singleTagCellId,
@@ -73,5 +77,15 @@ extension TagsCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayo
         }
         cell.tagtext = allTags?[indexPath.item]
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+
+        if cell?.isSelected == true {
+            if let allTags = allTags {
+                selectedTags.accept(selectedTags.value + [allTags[indexPath.item]])
+            }
+        }
     }
 }
