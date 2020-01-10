@@ -29,7 +29,7 @@ class QuoteSelectionVC: UIViewController {
             presentImagePickerController(withSourceType: .camera)
         }
 
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .quoteauViewControllerBackgroundColor
         setupViews()
         setupBinding()
         setupNavigation()
