@@ -25,7 +25,8 @@ class QuoteCollectionViewCell: UICollectionViewCell {
         stackView.axis = .vertical
         addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview().inset(12)
+            make.leading.trailing.equalToSuperview().inset(12)
+            make.top.bottom.equalToSuperview()
         }
     }
 
@@ -38,6 +39,7 @@ class QuoteCollectionViewCell: UICollectionViewCell {
     let quoteTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.heightAnchor.constraint(equalToConstant: 20).isActive = true
         return label
     }()
 

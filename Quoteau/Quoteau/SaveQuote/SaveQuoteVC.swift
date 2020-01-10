@@ -25,7 +25,7 @@ class SaveQuoteVC: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .quoteauViewControllerBackgroundColor
         setupConstraints()
         setupBindings()
         self.hideKeyboardWhenTappedAround()
