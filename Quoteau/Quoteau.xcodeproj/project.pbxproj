@@ -21,6 +21,10 @@
 		C6274C4A23BF78F10080E6B3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4923BF78F10080E6B3 /* ProfileViewModel.swift */; };
 		C6274C4E23C4D18B0080E6B3 /* TagsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4D23C4D18B0080E6B3 /* TagsCell.swift */; };
 		C6274C5023C4D2FF0080E6B3 /* SingleTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C4F23C4D2FF0080E6B3 /* SingleTagCell.swift */; };
+		C6274C5323C877B60080E6B3 /* DetailQuoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C5223C877B60080E6B3 /* DetailQuoteVC.swift */; };
+		C6274C5523C88AC70080E6B3 /* DetailsQuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C5423C88AC70080E6B3 /* DetailsQuoteViewModel.swift */; };
+		C6274C5723C894870080E6B3 /* TagsSingleQuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C5623C894870080E6B3 /* TagsSingleQuoteCell.swift */; };
+		C6274C5923C89DE20080E6B3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6274C5823C89DE20080E6B3 /* String.swift */; };
 		C6358EA523B0FB8100030798 /* QuoteSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */; };
 		C6358EA823B20FED00030798 /* SaveQuoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA723B20FED00030798 /* SaveQuoteVC.swift */; };
 		C6358EAA23B219A800030798 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6358EA923B219A800030798 /* CustomTextField.swift */; };
@@ -81,6 +85,10 @@
 		C6274C4923BF78F10080E6B3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C6274C4D23C4D18B0080E6B3 /* TagsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCell.swift; sourceTree = "<group>"; };
 		C6274C4F23C4D2FF0080E6B3 /* SingleTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTagCell.swift; sourceTree = "<group>"; };
+		C6274C5223C877B60080E6B3 /* DetailQuoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailQuoteVC.swift; sourceTree = "<group>"; };
+		C6274C5423C88AC70080E6B3 /* DetailsQuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsQuoteViewModel.swift; sourceTree = "<group>"; };
+		C6274C5623C894870080E6B3 /* TagsSingleQuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsSingleQuoteCell.swift; sourceTree = "<group>"; };
+		C6274C5823C89DE20080E6B3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C6358EA423B0FB8100030798 /* QuoteSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteSelectionViewModel.swift; sourceTree = "<group>"; };
 		C6358EA723B20FED00030798 /* SaveQuoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveQuoteVC.swift; sourceTree = "<group>"; };
 		C6358EA923B219A800030798 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -163,6 +171,16 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		C6274C5123C8778B0080E6B3 /* DetailsQuote */ = {
+			isa = PBXGroup;
+			children = (
+				C6274C5223C877B60080E6B3 /* DetailQuoteVC.swift */,
+				C6274C5423C88AC70080E6B3 /* DetailsQuoteViewModel.swift */,
+				C6274C5623C894870080E6B3 /* TagsSingleQuoteCell.swift */,
+			);
+			path = DetailsQuote;
+			sourceTree = "<group>";
+		};
 		C6358EA623B20FC500030798 /* SaveQuote */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +232,7 @@
 			children = (
 				C6430BF123AB7E5D0093AF5E /* UIImage.swift */,
 				C61A2AD123B2565100D1FD10 /* UIViewController.swift */,
+				C6274C5823C89DE20080E6B3 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -246,6 +265,7 @@
 				C6EFE61823B5130C0054C172 /* Authentication */,
 				C6EFE61323B4FC6C0054C172 /* Profile */,
 				C61A2AD323B25CB500D1FD10 /* Home */,
+				C6274C5123C8778B0080E6B3 /* DetailsQuote */,
 				C6358EB123B2524C00030798 /* Models */,
 				C6430BF523ABDC2B0093AF5E /* Extensions */,
 				C6358EA623B20FC500030798 /* SaveQuote */,
@@ -589,12 +609,15 @@
 				C6358EAA23B219A800030798 /* CustomTextField.swift in Sources */,
 				C610CC5623A8E484007B109C /* TabBarVC.swift in Sources */,
 				C6274C4E23C4D18B0080E6B3 /* TagsCell.swift in Sources */,
+				C6274C5723C894870080E6B3 /* TagsSingleQuoteCell.swift in Sources */,
 				C6430BF023AA7BB10093AF5E /* DrawView.swift in Sources */,
+				C6274C5323C877B60080E6B3 /* DetailQuoteVC.swift in Sources */,
 				C6A1E80D23A8F0DC00E8C938 /* Constraints.swift in Sources */,
 				C6274C4A23BF78F10080E6B3 /* ProfileViewModel.swift in Sources */,
 				C6358EAE23B21D9E00030798 /* Quote.swift in Sources */,
 				C61A2ADB23B3F74A00D1FD10 /* SearchCollectionViewHeader.swift in Sources */,
 				C6274C4823BF57C50080E6B3 /* LoginViewModel.swift in Sources */,
+				C6274C5923C89DE20080E6B3 /* String.swift in Sources */,
 				C6358EA823B20FED00030798 /* SaveQuoteVC.swift in Sources */,
 				C6EFE61523B4FC7A0054C172 /* ProfileVC.swift in Sources */,
 				C6EFE61A23B5131B0054C172 /* RegistrationVC.swift in Sources */,
@@ -604,6 +627,7 @@
 				C6EFE61C23B515880054C172 /* RegistrationViewModel.swift in Sources */,
 				C61A2AD523B25CCC00D1FD10 /* HomeVC.swift in Sources */,
 				C6EFE61223B410470054C172 /* TitleCollectionViewHeader.swift in Sources */,
+				C6274C5523C88AC70080E6B3 /* DetailsQuoteViewModel.swift in Sources */,
 				C6430BEE23AA7B830093AF5E /* ImageProcessor.swift in Sources */,
 				C6EFE61723B50ED30054C172 /* RemoteAPICommunicator.swift in Sources */,
 				C6358EB023B22AB600030798 /* SaveQuoteViewModel.swift in Sources */,

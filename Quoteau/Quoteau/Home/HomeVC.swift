@@ -222,6 +222,14 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
     }
 
     // MARK: - CollectionView Delegates and DataSource
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = DetailQuoteVC()
+        let detailQuoteViewModel = DetailsQuoteViewModel()
+        detailQuoteViewModel.quote.accept(viewModel.filteredQuotes.value[indexPath.item])
+        controller.viewModel = detailQuoteViewModel
+        present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
+    }
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -298,18 +306,5 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
-    }
-}
-
-extension String {
-    func replace(string: String, replacement: String) -> String {
-        return self.replacingOccurrences(of: string,
-                                         with: replacement,
-                                         options: NSString.CompareOptions.literal,
-                                         range: nil)
-    }
-
-    func removeWhitespace() -> String {
-        return self.replace(string: " ", replacement: "")
     }
 }
