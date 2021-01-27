@@ -12,6 +12,5 @@ opt_in_rules:
   - modifier_order
   - prohibited_interface_builder
   - toggle_bool
-  - unused_private_declaration
 excluded:
   - Pods
