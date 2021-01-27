@@ -2,47 +2,54 @@
 platform :ios, '13.1'
 
 target 'Quoteau' do
- inherit! :search_paths
+  inherit! :search_paths
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for Quoteau
-
+  
   pod 'SnapKit', '~> 5.0'
   pod 'SwiftLint'
-
+  
   # Pod for codable firebase
   pod 'CodableFirebase'
   
   # Pod for firebase
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-
+  
   # Pods for text recognition
   pod 'Firebase/MLVision'
-  pod 'Firebase/MLVisionTextModel'
-
+  pod 'GoogleMLKit/TextRecognition'
+  
   # Pods for remote database
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
-
+  
   # Pod for remote storage
   pod 'Firebase/Storage'
-
+  
   # Pod for local database
   pod 'RealmSwift'
-
+  
   # Pods for Rxswift
   pod 'RxSwift'
   pod 'RxCocoa'
 
   # Pods for Unit tests
-   abstract_target 'Tests' do
+  abstract_target 'Tests' do
     target "QuoteauTests"
     use_frameworks!
-
+    
     pod 'Quick'
     pod 'Nimble'
-
+    
+  end
+end
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+    end
   end
 end

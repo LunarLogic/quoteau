@@ -70,7 +70,7 @@ class HomeVC: UIViewController {
     fileprivate func setupBindingsAfterViewAppear() {
         viewModel.filteredQuotes
             .asObservable()
-            .observeOn(MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] _ in
                 let indexSet: IndexSet = [2]
                 self?.collectionView.reloadSections(indexSet)
