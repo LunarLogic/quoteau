@@ -92,6 +92,7 @@ class RemoteAPICommunicator {
                     .setData(docData) { (err) in
                         if let err = err {
                             completion(.failure(err))
+
                         }
                         completion(.success(()))
                 }

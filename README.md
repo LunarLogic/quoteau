@@ -2,4 +2,4 @@
 
 - `pod install`
 
-- ` swiftlint autocorrect`
+- `swiftlint autocorrect`

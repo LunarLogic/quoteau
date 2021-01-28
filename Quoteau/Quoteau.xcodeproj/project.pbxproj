@@ -677,7 +677,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P5RDH747R8;
+				DEVELOPMENT_TEAM = 46X34K86K5;
 				INFOPLIST_FILE = QuoteauTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -698,7 +698,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P5RDH747R8;
+				DEVELOPMENT_TEAM = 46X34K86K5;
 				INFOPLIST_FILE = QuoteauTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -717,7 +717,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P5RDH747R8;
+				DEVELOPMENT_TEAM = 46X34K86K5;
 				INFOPLIST_FILE = QuoteauUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,8 +735,9 @@
 		C6430BE923AA5CB10093AF5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P5RDH747R8;
+				DEVELOPMENT_TEAM = 46X34K86K5;
 				INFOPLIST_FILE = QuoteauUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

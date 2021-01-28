@@ -18,16 +18,18 @@ class RegistrationViewModel {
     let isUserRegistered: PublishSubject<Bool> = PublishSubject()
 
     func register() {
-        RemoteAPICommunicator.shared.performRegistration(email: email.value,
-                                                         password: password.value, name: fullName.value) { result in
-                                                            switch result {
-                                                            case .success(let uid):
-                                                                UserDefaults.standard.set(uid, forKey: "userUid")
-                                                                self.sendQuotesToFirebase()
-                                                            case .failure(let error):
-                                                                print(error)
-                                                                self.isUserRegistered.onNext(false)
-                                                            }
+        RemoteAPICommunicator.shared.performRegistration(
+            email: email.value,
+            password: password.value, name: fullName.value
+        ) { result in
+            switch result {
+            case .success(let uid):
+                UserDefaults.standard.set(uid, forKey: "userUid")
+                self.sendQuotesToFirebase()
+            case .failure(let error):
+                print(error)
+                self.isUserRegistered.onNext(false)
+            }
         }
     }
 
@@ -36,6 +38,10 @@ class RegistrationViewModel {
         LocalAPICommunicator.shared.readAllQuotes()?.forEach({ (quote) in
             quotes.append(quote)
         })
+        if quotes.isEmpty {
+            self.isUserRegistered.onNext(true)
+            return
+        }
         RemoteAPICommunicator.shared.saveQuotesInFirestre(quotes: quotes) { (result) in
             switch result {
             case .success:

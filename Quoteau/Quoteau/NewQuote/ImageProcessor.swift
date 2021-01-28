@@ -6,13 +6,12 @@
 //  Copyright © 2019 Lunar Logic. All rights reserved.
 //
 
-import Firebase
 import RxSwift
+import MLKit
 
 struct TextElement: Equatable {
     static func == (lhs: TextElement, rhs: TextElement) -> Bool {
-        return lhs.text == rhs.text &&
-            lhs.index == rhs.index
+        return lhs.text == rhs.text && lhs.index == rhs.index
     }
 
     let text: String
@@ -28,15 +27,13 @@ struct ScaledElement {
 
 class ImageProcessor {
 
-    let vision = Vision.vision()
-    var textRecognizer: VisionTextRecognizer!
+    var textRecognizer: TextRecognizer!
 
     init() {
-        textRecognizer = vision.onDeviceTextRecognizer()
+        textRecognizer = TextRecognizer.textRecognizer()
     }
 
-    func process(in imageView: UIImageView,
-                 singleWords: Bool) -> Observable<(String, [TextElement])> {
+    func process(in imageView: UIImageView, singleWords: Bool) -> Observable<(String, [TextElement])> {
 
         return Observable<(String, [TextElement])>.create { observer in
 
@@ -47,10 +44,11 @@ class ImageProcessor {
         }
     }
 
-    private func process(in imageView: UIImageView,
-                         singleWords: Bool,
-                         callback: @escaping (_ text: String,
-        _ textElement: [TextElement]) -> Void) {
+    private func process(
+        in imageView: UIImageView,
+        singleWords: Bool,
+        callback: @escaping (_ text: String, _ textElement: [TextElement]) -> Void
+    ) {
         guard let image = imageView.image else { return }
         let visionImage = VisionImage(image: image)
 
@@ -88,15 +86,14 @@ class ImageProcessor {
                 for block in result.blocks {
                     for line in block.lines {
 
-                        let frame = self.createScaledFrame(featureFrame: line.frame,
-                                                           imageSize: image.size,
-                                                           viewFrame: imageView.frame)
-
+                        let frame = self.createScaledFrame(
+                            featureFrame: line.frame, imageSize: image.size, viewFrame: imageView.frame
+                        )
                         let shapeLayer = self.createShapeLayer(frame: frame)
                         let selectedShapeLayer = self.editShapeLayer(frame: frame)
-                        let scaledElement = ScaledElement(frame: frame,
-                                                          shapeLayer: shapeLayer,
-                                                          selectedShapeLayer: selectedShapeLayer)
+                        let scaledElement = ScaledElement(
+                            frame: frame, shapeLayer: shapeLayer, selectedShapeLayer: selectedShapeLayer
+                        )
                         scaledElements.append(scaledElement)
                         textElements.append(TextElement(text: line.text, scaledElement: scaledElement, index: index))
                         index += 1

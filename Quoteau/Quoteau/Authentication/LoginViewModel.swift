@@ -37,6 +37,10 @@ class LoginViewModel {
         LocalAPICommunicator.shared.readAllQuotes()?.forEach({ (quote) in
             quotes.append(quote)
         })
+        if quotes.isEmpty {
+            userLogged.onCompleted()
+            return
+        }
         RemoteAPICommunicator.shared.saveQuotesInFirestre(quotes: quotes) { (result) in
             switch result {
             case .success:
