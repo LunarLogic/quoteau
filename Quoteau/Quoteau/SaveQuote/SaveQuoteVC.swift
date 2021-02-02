@@ -56,18 +56,18 @@ class SaveQuoteVC: UIViewController {
             }).disposed(by: disposeBag)
     }
 
-    fileprivate func bind(textField: UITextField,
-                          to behaviorRelay: BehaviorRelay<String>) {
+    fileprivate func bind(textField: UITextField, to behaviorRelay: BehaviorRelay<String>) {
         behaviorRelay
             .asObservable()
             .bind(to: textField.rx.text)
             .disposed(by: disposeBag)
+
         textField.rx.text
             .flatMap { text in
                 return text.map(Observable.just) ?? Observable.empty()
-        }
-        .bind(to: behaviorRelay)
-        .disposed(by: disposeBag)
+            }
+            .bind(to: behaviorRelay)
+            .disposed(by: disposeBag)
     }
 
     // MARK: - Private
@@ -77,12 +77,14 @@ class SaveQuoteVC: UIViewController {
     }
 
     // MARK: - Views
-    lazy var stackView = UIStackView(arrangedSubviews: [quoteNameTextField,
-                                                        authorTextField,
-                                                        bookTitleTextField,
-                                                        tagsTextField,
-                                                        tagsCollectionView,
-                                                        submitButton])
+    lazy var stackView = UIStackView(
+        arrangedSubviews: [quoteNameTextField,
+                           authorTextField,
+                           bookTitleTextField,
+                           tagsTextField,
+                           tagsCollectionView,
+                           submitButton]
+    )
 
     let quoteNameTextField: CustomTextField = {
         let textField = CustomTextField(padding: 12)
@@ -124,7 +126,7 @@ class SaveQuoteVC: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.setTitleColor(.systemGray6, for: .normal)
         button.backgroundColor = .blue
-//        button.isEnabled = false
+        // button.isEnabled = false
         button.layer.cornerRadius = 20
         button.addTarget(self, action: #selector(handleSubmit), for: .touchUpInside)
         return button

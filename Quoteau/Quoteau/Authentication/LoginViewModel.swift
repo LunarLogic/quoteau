@@ -41,7 +41,7 @@ class LoginViewModel {
             userLogged.onCompleted()
             return
         }
-        RemoteAPICommunicator.shared.saveQuotesInFirestre(quotes: quotes) { (result) in
+        RemoteAPICommunicator.shared.saveQuotesInFirestore(quotes: quotes) { (result) in
             switch result {
             case .success:
                 self.userLogged.onCompleted()

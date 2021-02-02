@@ -20,7 +20,8 @@ class RegistrationViewModel {
     func register() {
         RemoteAPICommunicator.shared.performRegistration(
             email: email.value,
-            password: password.value, name: fullName.value
+            password: password.value,
+            name: fullName.value
         ) { result in
             switch result {
             case .success(let uid):
@@ -42,7 +43,7 @@ class RegistrationViewModel {
             self.isUserRegistered.onNext(true)
             return
         }
-        RemoteAPICommunicator.shared.saveQuotesInFirestre(quotes: quotes) { (result) in
+        RemoteAPICommunicator.shared.saveQuotesInFirestore(quotes: quotes) { (result) in
             switch result {
             case .success:
                 self.isUserRegistered.onNext(true)

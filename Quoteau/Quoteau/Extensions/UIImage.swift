@@ -10,10 +10,10 @@ import UIKit
 
 extension UIImage {
 
-   private func transformImageOrientation() -> CGAffineTransform {
+    private func transformImageOrientation() -> CGAffineTransform {
         let width  = self.size.width
         let height = self.size.height
-         var transform = CGAffineTransform.identity
+        var transform = CGAffineTransform.identity
         switch imageOrientation {
         case .down, .downMirrored:
             transform = transform.translatedBy(x: width, y: height)
@@ -46,14 +46,15 @@ extension UIImage {
             return nil
         }
 
-        guard let context = CGContext(data: nil,
-                                      width: Int(width),
-                                      height: Int(height),
-                                      bitsPerComponent: cgImage.bitsPerComponent,
-                                      bytesPerRow: 0,
-                                      space: colorSpace,
-                                      bitmapInfo: UInt32(cgImage.bitmapInfo.rawValue)
-            ) else { return nil }
+        guard let context = CGContext(
+            data: nil,
+            width: Int(width),
+            height: Int(height),
+            bitsPerComponent: cgImage.bitsPerComponent,
+            bytesPerRow: 0,
+            space: colorSpace,
+            bitmapInfo: UInt32(cgImage.bitmapInfo.rawValue)
+        ) else { return nil }
 
         context.concatenate(transform())
 

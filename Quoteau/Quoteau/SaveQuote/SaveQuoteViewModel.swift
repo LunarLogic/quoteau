@@ -22,14 +22,16 @@ class SaveQuoteViewModel {
 
         let allTags = separateTags(string: tags.value)
 
-        let quote = Quote(quote: self.quote.value,
-                          title: name.value,
-                          author: author.value,
-                          tags: allTags,
-                          bookTitle: bookTitle.value)
+        let quote = Quote(
+            quote: self.quote.value,
+            title: name.value,
+            author: author.value,
+            tags: allTags,
+            bookTitle: bookTitle.value
+        )
 
         LocalAPICommunicator.shared.saveQuote(quote: quote)
-        RemoteAPICommunicator.shared.saveQuotesInFirestre(quotes: [quote]) { (result) in
+        RemoteAPICommunicator.shared.saveQuotesInFirestore(quotes: [quote]) { (result) in
             switch result {
             case .success:
                 print("Saved quote in firestore")
