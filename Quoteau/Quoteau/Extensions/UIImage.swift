@@ -60,19 +60,18 @@ extension UIImage {
 
         switch imageOrientation {
         case .left, .leftMirrored, .right, .rightMirrored:
-            context.draw(cgImage, in: CGRect(x: 0,
-                                             y: 0,
-                                             width: height,
-                                             height: width))
+            context.draw(
+                cgImage,
+                in: CGRect(x: 0, y: 0, width: height, height: width)
+            )
         default:
-            context.draw(cgImage, in: CGRect(x: 0,
-                                             y: 0,
-                                             width: width,
-                                             height: height))
+            context.draw(
+                cgImage,
+                in: CGRect(x: 0, y: 0, width: width, height: height)
+            )
         }
 
         guard let newCGImg = context.makeImage() else { return nil }
-
         let img = UIImage(cgImage: newCGImg)
 
         return img

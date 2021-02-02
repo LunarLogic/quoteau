@@ -48,18 +48,19 @@ class DetailQuoteVC: UIViewController {
 
     // MARK: - Private
     fileprivate func setupTagsCollectionView() {
-        tagsCollectionView.register(TagsSingleQuoteCell.self,
-                                    forCellWithReuseIdentifier: tagCellId)
+        tagsCollectionView.register(TagsSingleQuoteCell.self, forCellWithReuseIdentifier: tagCellId)
         tagsCollectionView.delegate = self
         tagsCollectionView.dataSource = self
     }
 
     // MARK: - Views
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel,
-                                                       quoteLabel,
-                                                       bookTitleAndAuthorLabel,
-                                                       tagsLabel])
+        let stackView = UIStackView(
+            arrangedSubviews: [titleLabel,
+                               quoteLabel,
+                               bookTitleAndAuthorLabel,
+                               tagsLabel]
+        )
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = 22
@@ -120,24 +121,24 @@ class DetailQuoteVC: UIViewController {
 // MARK: - Collection View Delegates and Data Source
 extension DetailQuoteVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.tags.value.count ?? 0
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tagCellId,
-                                                            for: indexPath) as? TagsSingleQuoteCell
-            else {
-                fatalError("Unable to dequeue TagsCell")
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: tagCellId,
+            for: indexPath
+        ) as? TagsSingleQuoteCell else {
+            fatalError("Unable to dequeue TagsCell")
         }
         cell.tagText = viewModel?.tags.value[indexPath.item]
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (view.frame.width - 24)/2 - 10, height: 44)
     }
 }
