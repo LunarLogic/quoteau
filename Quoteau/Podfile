@@ -20,7 +20,6 @@ target 'Quoteau' do
   pod 'Firebase/Auth'
   
   # Pods for text recognition
-  pod 'Firebase/MLVision'
   pod 'GoogleMLKit/TextRecognition'
   
   # Pods for remote database

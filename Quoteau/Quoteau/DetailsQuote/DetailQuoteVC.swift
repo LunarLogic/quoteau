@@ -56,10 +56,7 @@ class DetailQuoteVC: UIViewController {
     // MARK: - Views
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(
-            arrangedSubviews: [titleLabel,
-                               quoteLabel,
-                               bookTitleAndAuthorLabel,
-                               tagsLabel]
+            arrangedSubviews: [titleLabel, quoteLabel, bookTitleAndAuthorLabel, tagsLabel]
         )
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
@@ -125,7 +122,10 @@ extension DetailQuoteVC: UICollectionViewDataSource, UICollectionViewDelegateFlo
         return viewModel?.tags.value.count ?? 0
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: tagCellId,
             for: indexPath

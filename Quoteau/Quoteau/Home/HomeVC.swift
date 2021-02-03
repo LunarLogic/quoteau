@@ -220,7 +220,9 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
     }
 
     func collectionView(
-        _ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        referenceSizeForHeaderInSection section: Int
     ) -> CGSize {
         switch section {
         case 0:
