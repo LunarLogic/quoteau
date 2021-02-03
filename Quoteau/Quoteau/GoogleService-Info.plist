@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>430503361658-ck7qtdo44ig3ile082okrhdkkejg8qvi.apps.googleusercontent.com</string>
+	<string>357491264964-bhd383cqc3m849q3jl30pbc6ut0gjc9k.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.430503361658-ck7qtdo44ig3ile082okrhdkkejg8qvi</string>
+	<string>com.googleusercontent.apps.357491264964-bhd383cqc3m849q3jl30pbc6ut0gjc9k</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAHOnqzkpVGUyZAXBFX-m4CASD0e6Et5sE</string>
+	<string>AIzaSyCZimbmdwYcEVvJ3VPw4Qd7mLwiAddqJc4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>430503361658</string>
+	<string>357491264964</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>io.lunarlogic.quoteau</string>
 	<key>PROJECT_ID</key>
-	<string>quoteau-faed4</string>
+	<string>quoteau-1e320</string>
 	<key>STORAGE_BUCKET</key>
-	<string>quoteau-faed4.appspot.com</string>
+	<string>quoteau-1e320.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:430503361658:ios:e9adc3fbaf94a3b7ae8fc3</string>
-	<key>DATABASE_URL</key>
-	<string>https://quoteau-faed4.firebaseio.com</string>
+	<string>1:357491264964:ios:237227f101cbadce14e891</string>
 </dict>
 </plist>

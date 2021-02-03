@@ -70,7 +70,7 @@ class HomeVC: UIViewController {
     fileprivate func setupBindingsAfterViewAppear() {
         viewModel.filteredQuotes
             .asObservable()
-            .observeOn(MainScheduler.asyncInstance)
+            .observe(on: MainScheduler.asyncInstance)
             .subscribe(onNext: { [weak self] _ in
                 let indexSet: IndexSet = [2]
                 self?.collectionView.reloadSections(indexSet)
@@ -121,13 +121,14 @@ class HomeVC: UIViewController {
     // MARK: - Views
     let emptyQuotesLabel: UILabel = {
         let label = UILabel()
-        let attributedText =
-            NSMutableAttributedString(string: "Oh hi there! Please, go ahead and \nadd your first quote.",
-                                      attributes: [.font: UIFont.systemFont(ofSize: 19,
-                                                                            weight: .regular)])
-        let secondSentense = NSAttributedString(string: "\nThis page is waiting for some cool\nquotes from you." ,
-                                                attributes: [.font: UIFont.systemFont(ofSize: 13,
-                                                                                      weight: .light)])
+        let attributedText = NSMutableAttributedString(
+            string: "Oh hi there! Please, go ahead and \nadd your first quote.",
+            attributes: [.font: UIFont.systemFont(ofSize: 19, weight: .regular)]
+        )
+        let secondSentense = NSAttributedString(
+            string: "\nThis page is waiting for some cool\nquotes from you." ,
+            attributes: [.font: UIFont.systemFont(ofSize: 13, weight: .light)]
+        )
         attributedText.append(secondSentense)
         label.attributedText = attributedText
         label.numberOfLines = 0
@@ -162,17 +163,21 @@ class HomeVC: UIViewController {
 extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // MARK: - Headers
-    func collectionView(_ collectionView: UICollectionView,
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
         switch indexPath.section {
         case 0:
-            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                               withReuseIdentifier: searchHeaderID,
-                                                                               for: indexPath)
-                as? SearchCollectionViewHeader
-                else {
-                    fatalError("Unable to dequeue SearchTableViewHeader")
+            guard let header = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: searchHeaderID,
+                for: indexPath
+            )
+            as? SearchCollectionViewHeader
+            else {
+                fatalError("Unable to dequeue SearchTableViewHeader")
             }
             if !viewModel.searchText.value.isEmpty {
                 header.searchText.accept(viewModel.searchText.value)
@@ -185,22 +190,26 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
             return header
         case 1:
-            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                               withReuseIdentifier: titleHeaderId,
-                                                                               for: indexPath)
-                as? TitleCollectionViewHeader
-                else {
-                    fatalError("Unable to dequeue TitleCollectionViewHeader")
+            guard let header = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: titleHeaderId,
+                for: indexPath
+            )
+            as? TitleCollectionViewHeader
+            else {
+                fatalError("Unable to dequeue TitleCollectionViewHeader")
             }
             header.titleLabel.text = "Recent tags:"
             return header
         case 2:
-            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                               withReuseIdentifier: titleHeaderId,
-                                                                               for: indexPath)
-                as? TitleCollectionViewHeader
-                else {
-                    fatalError("Unable to dequeue TitleCollectionViewHeader")
+            guard let header = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: titleHeaderId,
+                for: indexPath
+            )
+            as? TitleCollectionViewHeader
+            else {
+                fatalError("Unable to dequeue TitleCollectionViewHeader")
 
             }
             header.titleLabel.text = "Recent quotes:"
@@ -210,9 +219,9 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int
+    ) -> CGSize {
         switch section {
         case 0:
             return CGSize(width: view.frame.width, height: Constraints.searchHeaderHomeVCHeight)
@@ -230,9 +239,11 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
         present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         switch indexPath.section {
         case 1:
             return CGSize(width: view.frame.width, height: Constraints.tagsCollectionViewHeight)
@@ -256,21 +267,24 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         switch indexPath.section {
         case 1:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: tagCellId,
-                                                                for: indexPath) as? TagsCell
-                else {
-                    fatalError("Unable to dequeue TagsCell")
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: tagCellId,
+                for: indexPath
+            ) as? TagsCell
+            else {
+                fatalError("Unable to dequeue TagsCell")
             }
             viewModel.searchText
-            .asObservable()
-            .subscribe(onNext: {  _ in
-//                guard let viewModel = self?.viewModel else { return }
-                cell.selectedTags.accept([])
-            }).disposed(by: disposeBag)
+                .asObservable()
+                .subscribe(onNext: {  _ in
+                    // guard let viewModel = self?.viewModel else { return }
+                    cell.selectedTags.accept([])
+                }).disposed(by: disposeBag)
 
             viewModel.filteredTags
                 .asObservable()
@@ -285,17 +299,19 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
             cell.selectedTags
                 .asObservable()
-//                .filter({ $0 != [] })
+                // .filter({ $0 != [] })
                 .subscribe(onNext: { [weak self] tags in
                     self?.viewModel.filterQuotesByTags(tags: Set(tags))
                 }).disposed(by: disposeBag)
             cell.allTags = Array(viewModel.filteredTags.value)
             return cell
         case 2:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: quotesCellsId,
-                                                                for: indexPath) as? QuoteCollectionViewCell
-                else {
-                    fatalError("Unable to dequeue QuoteCollectionViewCell")
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: quotesCellsId,
+                for: indexPath
+            ) as? QuoteCollectionViewCell
+            else {
+                fatalError("Unable to dequeue QuoteCollectionViewCell")
             }
             cell.quote = viewModel.filteredQuotes.value[indexPath.item]
             return cell

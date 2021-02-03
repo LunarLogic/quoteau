@@ -20,10 +20,12 @@ class RemoteAPICommunicator {
 
     private init() { }
 
-    func performRegistration(email: String,
-                             password: String,
-                             name: String,
-                             completion: @escaping (Result<String, Error>) -> Void) {
+    func performRegistration(
+        email: String,
+        password: String,
+        name: String,
+        completion: @escaping (Result<String, Error>) -> Void
+    ) {
         Auth.auth().createUser(withEmail: email, password: password) { (res, err) in
             if let err = err {
                 completion(.failure(err))
@@ -52,9 +54,7 @@ class RemoteAPICommunicator {
         }
     }
 
-    func performLogin(email: String,
-                      password: String,
-                      completion: @escaping (Result<String, Error>) -> Void) {
+    func performLogin(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (res, err) in
             if let err = err {
                 completion(.failure(err))
@@ -65,10 +65,12 @@ class RemoteAPICommunicator {
         }
     }
 
-    func saveUserDataInFirestore(email: String,
-                                 name: String,
-                                 uid: String,
-                                 completion: @escaping (Result<Void, Error>) -> Void) {
+    func saveUserDataInFirestore(
+        email: String,
+        name: String,
+        uid: String,
+        completion: @escaping (Result<Void, Error>) -> Void
+    ) {
         let data = ["email": email, "name": name]
         Firestore.firestore().collection(usersCollection).document(uid).setData(data) { (err) in
             if let err = err {
@@ -79,7 +81,7 @@ class RemoteAPICommunicator {
         }
     }
 
-    func saveQuotesInFirestre(quotes: [Quote], completion: @escaping (Result<Void, Error>) -> Void) {
+    func saveQuotesInFirestore(quotes: [Quote], completion: @escaping (Result<Void, Error>) -> Void) {
         guard let uid = Common.userUid else { return }
         quotes.forEach { (quote) in
             do {
@@ -92,9 +94,10 @@ class RemoteAPICommunicator {
                     .setData(docData) { (err) in
                         if let err = err {
                             completion(.failure(err))
+
                         }
                         completion(.success(()))
-                }
+                    }
             } catch {
                 print("Unable to encode data")
             }

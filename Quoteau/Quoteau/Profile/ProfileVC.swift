@@ -19,7 +19,7 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .quoteauViewControllerBackgroundColor
         setupConstraint()
-        navigationItem.title = "User name"
+        navigationItem.title = "Hello \(Common.currentUserName)"
         setupBindings()
         viewModel.checkUserStatus()
     }

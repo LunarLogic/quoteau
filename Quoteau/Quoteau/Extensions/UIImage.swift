@@ -10,10 +10,10 @@ import UIKit
 
 extension UIImage {
 
-   private func transformImageOrientation() -> CGAffineTransform {
+    private func transformImageOrientation() -> CGAffineTransform {
         let width  = self.size.width
         let height = self.size.height
-         var transform = CGAffineTransform.identity
+        var transform = CGAffineTransform.identity
         switch imageOrientation {
         case .down, .downMirrored:
             transform = transform.translatedBy(x: width, y: height)
@@ -46,32 +46,32 @@ extension UIImage {
             return nil
         }
 
-        guard let context = CGContext(data: nil,
-                                      width: Int(width),
-                                      height: Int(height),
-                                      bitsPerComponent: cgImage.bitsPerComponent,
-                                      bytesPerRow: 0,
-                                      space: colorSpace,
-                                      bitmapInfo: UInt32(cgImage.bitmapInfo.rawValue)
-            ) else { return nil }
+        guard let context = CGContext(
+            data: nil,
+            width: Int(width),
+            height: Int(height),
+            bitsPerComponent: cgImage.bitsPerComponent,
+            bytesPerRow: 0,
+            space: colorSpace,
+            bitmapInfo: UInt32(cgImage.bitmapInfo.rawValue)
+        ) else { return nil }
 
         context.concatenate(transform())
 
         switch imageOrientation {
         case .left, .leftMirrored, .right, .rightMirrored:
-            context.draw(cgImage, in: CGRect(x: 0,
-                                             y: 0,
-                                             width: height,
-                                             height: width))
+            context.draw(
+                cgImage,
+                in: CGRect(x: 0, y: 0, width: height, height: width)
+            )
         default:
-            context.draw(cgImage, in: CGRect(x: 0,
-                                             y: 0,
-                                             width: width,
-                                             height: height))
+            context.draw(
+                cgImage,
+                in: CGRect(x: 0, y: 0, width: width, height: height)
+            )
         }
 
         guard let newCGImg = context.makeImage() else { return nil }
-
         let img = UIImage(cgImage: newCGImg)
 
         return img

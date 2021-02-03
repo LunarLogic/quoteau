@@ -15,10 +15,12 @@ class RegistrationVC: UIViewController {
 
     let viewModel = RegistrationViewModel()
     let disposeBag = DisposeBag()
-    lazy var stackView = UIStackView(arrangedSubviews: [nameTextField,
-                                                        emailTextField,
-                                                        passwordTextField,
-                                                        registerButton])
+    lazy var stackView = UIStackView(
+        arrangedSubviews: [nameTextField,
+                           emailTextField,
+                           passwordTextField,
+                           registerButton]
+    )
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,9 +68,9 @@ class RegistrationVC: UIViewController {
         textField.rx.text
             .flatMap { text in
                 return text.map(Observable.just) ?? Observable.empty()
-        }
-        .bind(to: behaviorRelay)
-        .disposed(by: disposeBag)
+            }
+            .bind(to: behaviorRelay)
+            .disposed(by: disposeBag)
     }
 
     // MARK: - Private

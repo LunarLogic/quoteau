@@ -7,20 +7,23 @@
 //
 
 import Foundation
+import FirebaseAuth
 
-struct Common {
-
-    private init() {}
+enum Common {
 
     static let defaults = UserDefaults.standard
     static var isUserLoggedIn: Bool {
-        if UserDefaults.standard.string(forKey: "userUid") != nil {
-            return true
-        } else {
-            return false
-        }
+        return Auth.auth().currentUser != nil
     }
     static var userUid: String? {
         return UserDefaults.standard.string(forKey: "userUid")
+    }
+
+    static var currentUser: User? {
+        Auth.auth().currentUser
+    }
+
+    static var currentUserName: String {
+        Auth.auth().currentUser?.email ?? ""
     }
 }
